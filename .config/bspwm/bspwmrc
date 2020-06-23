@@ -1,0 +1,45 @@
+#! /bin/sh
+###############################
+
+#### AUTOSTART ####
+sxhkd &
+compton --config /home/saul/.config/compton/compton.conf -b &
+#xfce4-panel &
+#blueman-applet &
+#cbatticon &
+#polybar future &
+#xfce4-power-manager &
+#wal -i $HOME/Pictures/neon-city-red.jpg &
+#synclient TapButton1=1 TapButton2=3 TapButton3=2 & #For laptop touchpad
+#xset -b & #For annoying beeping sounds
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#nm-tray & 
+#start-pulseaudio-x11
+#nitrogen --restore & 
+ 
+#### WORKSPACES AND BORDERS ####
+ 
+#Monitor allocation and their workspaces
+bspc monitor -d 1 2 3 4 5 6 7 8 9  
+ 
+#Border gaps,width, and padding
+bspc config border_width         0
+bspc config window_gap           5
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+ 
+bspc config top_padding          10
+bspc config bottom_padding       10
+bspc config left_padding         10
+bspc config right_padding        10
+ 
+#bspc rule -a URxvt desktop='^1' follow=on
+#bspc rule -a Subl3 desktop='^2' follow=on
+#bspc rule -a Firefox desktop='^3' follow=on
+#bspc rule -a Thunar desktop='^4' follow=on
+#bspc rule -a Evince desktop='^5'follow=on
+ 
+#Focus on pointer
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus true
