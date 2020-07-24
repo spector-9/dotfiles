@@ -1,5 +1,9 @@
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>r
+highlight Normal ctermbg=Black
+
 "Key Binds"
-:nnoremap <C-I> :IndentLinesToggle<CR>
+" :nnoremap <C-I> :IndentLinesToggle<CR> Useless,tab can be used instead.
 """"""""""""""""Status Line"""""""""""""""""
 set laststatus=2
 """"""""""""""""LEADER KEY""""""""""""""""""""
@@ -43,9 +47,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vimwiki/vimwiki'
 
 """""""""""""""""""""""""""""
-""""""""""Color Theme""""""""
-""gruvbox""""
-Plugin 'morhetz/gruvbox'
 
 """""""""""""YCM""""""""""
 """""""Auto Completer"""""
@@ -54,8 +55,6 @@ Plugin 'ycm-core/YouCompleteMe'
 "''''Indentation line(visual lines)""""""""""""
 Plugin 'Yggdroot/indentLine'
 
-"TO load plugin colorschemes"
-autocmd vimenter * colorscheme gruvbox
 
 """"""""CSS COLORS"""""""""""""
 Plugin 'chrisbra/Colorizer' 
@@ -68,9 +67,11 @@ Plugin 'mattn/emmet-vim'
 """"""""NERDtree""""""""""""""
 Plugin 'preservim/nerdtree'
 
-"""""""NERDtree toggle bind"""""""
-map <C-n> :NERDTreeToggle<CR>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""Color Theme""""""""
+""gruvbox""""
+Plugin 'morhetz/gruvbox'
+Plugin 'kyoz/purify', { 'rtp': 'vim' }
+map <C-n> :NERDTreeToggle<CR> 
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,6 +93,7 @@ let g:gruvbox_italic=1  "Enabling italics
 ""Color Schema"
 
 "colorscheme desert-night"Desert night color scheme
-colorscheme gruvbox
-
+"TO load plugin colorschemes"
+ autocmd vimenter * colorscheme gruvbox
+ let g:gruvbox_contrast_dark='hard'
 
