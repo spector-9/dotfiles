@@ -1,34 +1,38 @@
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywordsset nocompatible
+syntax on
+
+" Interpret Python Scripts
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>r
+" Setting Background Black
 highlight Normal ctermbg=Black
-
+" Tab width
+:set tabstop=4
+:set shiftwidth=4
+:set expandtab
 "Key Binds"
-" :nnoremap <C-I> :IndentLinesToggle<CR> Useless,tab can be used instead.
+:nnoremap <C-I> :IndentLinesToggle<CR> 
+map <C-n> :NERDTreeToggle<CR> 
 """"""""""""""""Status Line"""""""""""""""""
 set laststatus=2
-""""""""""""""""LEADER KEY""""""""""""""""""""
-
-
+" LEADER KEY
 :let mapleader = "\<SPACE>"
-
-
-"""""""""""""""""""""""""""""""""""""""""""""
-"Line Numbers
+" Line Numbers
 :set relativenumber
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""Close preview window after inseriton""""""""""
+" Close auto complete's preview window after insertion
 let g:ycm_autoclose_preview_window_after_insertion = 1
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Plugin required commands
-set nocompatible
-filetype plugin on
-syntax on
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
-filetype off                  " required
+"filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -38,40 +42,27 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""plugins here"""""""""""""""""""""""""
+" Plugins Here 
 
-""""""""VIM WIKI""""""""""""""""
-""A personal organiser"
+
+
+" Haskell Syntax highlighting
+Plugin 'neovimhaskell/haskell-vim'
+" VIM WIKI
 Plugin 'vimwiki/vimwiki'
-
-"""""""""""""""""""""""""""""
-
-"""""""""""""YCM""""""""""
-"""""""Auto Completer"""""
+" YCM
 Plugin 'ycm-core/YouCompleteMe'
-
-"''''Indentation line(visual lines)""""""""""""
+"Indentation line
 Plugin 'Yggdroot/indentLine'
-
-
 """"""""CSS COLORS"""""""""""""
 Plugin 'chrisbra/Colorizer' 
-
-""""""""" Emmet """""""""""""""
-"""""HTML AUTO COMPLETER""""""""
+""""""""" Emmet(html auto complete)
 Plugin 'mattn/emmet-vim'
-"
-""""""""""File tree"""""""""""
-""""""""NERDtree""""""""""""""
+"NERDtree
 Plugin 'preservim/nerdtree'
-
-""""""""""Color Theme""""""""
-""gruvbox""""
+" gruvbox theme
 Plugin 'morhetz/gruvbox'
-Plugin 'kyoz/purify', { 'rtp': 'vim' }
-map <C-n> :NERDTreeToggle<CR> 
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required

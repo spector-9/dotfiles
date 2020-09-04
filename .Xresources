@@ -3,61 +3,102 @@
 ! URxvt Color theme
 ! ------------------------------------------------------------------------------
 
-URxvt*font: xft:M+ 2m regular:pixelsize=19:antialiasing=true:size=14
+URxvt*font:MesloLGS NF:pixelsize=19:antialiasing=true:
 URxvt*letterspace: 0
 URxvt*scrollBar: false
 URxvt.intensityStyles: false
 URxvt.transparent:   true
-URxvt.depth: 24
-URxvt.shading: 30
+!URxvt.depth: 4
+URxvt*scrollWithBuffer: false
+URxvt*skipScroll: true
+URxvt.shading: 23 
+!urxvt*blurRadius: 4
+!URxvt*background-expr: 'rootalign keep { blur 10, root }'
 
-Xft.dpi: 96
-Xft.antialias: true
-Xft.hinting: true
-Xft.rgba: rgb
-Xft.autohint: false
-Xft.hintstyle: hintslight
-Xft.lcdfilter: lcddefault
+!Xft.dpi: 46
+!Xft.antialias: false
+!Xft.hinting: true
+!Xft.rgba: rgb
+!Xft.autohint: false
+!Xft.hintstyle: hintslight
+!Xft.lcdfilter: lcddefault
+!URxvt*borderColor: #2b2b2b
 
 ! special
 URxvt.background: #000000
-URxvt.foreground: #D3D3D3
-
-URxvt*cursorColor: #ffff00
+!URxvt.foreground: #D3D3D3
+!URxvt*cursorColor: #ffff00
 URxvt*colorUL: #ffa500
 URxvt*borderColor: #2b2b2b
+! special
+*.foreground:   #cccccc
+!*.background:   #111111
+*.cursorColor:  #cccccc
 
 ! black
-*color0: #000000
-*color8: #2b2b2b
+*.color0:       #000000
+*.color8:       #666666
 
 ! red
-*color1:  #8b0000
-*color9:  #8c5353
-!
+*.color1:       #e84f4f
+*.color9:       #d23d3d
+
 ! green
-*color2:  #00ff00
-*color10: #61CE3C
-!
+*.color2:       #b7ce42
+*.color10:      #bde077
+
 ! yellow
-*color3:  #ffa500
-*color11: #ffff00
-!
+*.color3:       #fea63c
+*.color11:      #ffe863
+
 ! blue
-*color4:  #4c83ff
-*color12: #b2dfee
+*.color4:       #66a9b9
+*.color12:      #aaccbb
 
 ! magenta
-*color5:  #dc8cc3
-*color13: #ff0000
+*.color5:       #b7416e
+*.color13:      #e16a98
 
 ! cyan
-*color6:  #93e0e3
-*color14: #0000ff
+*.color6:       #6d878d
+*.color14:      #42717b
 
 ! white
-*color7:  #dcdccc
-*color15: #2b2b2b
+*.color7:       #cccccc
+*.color15:      #ffffff
+
+!! black
+!*color0: #000000
+!*color8: #2b2b2b
+!
+!! red
+!*color1:  #8b0000
+!*color9:  #8c5353
+!!
+!! green
+!*color2:  #00ff00
+!*color10: #61CE3C
+!!
+!! yellow
+!*color3:  #ffa500
+!*color11: #ffff00
+!!
+!! blue
+!*color4:  #4c83ff
+!*color12: #b2dfee
+!
+!! magenta
+!*color5:  #dc8cc3
+!*color13: #ff0000
+!
+!! cyan
+!*color6:  #93e0e3
+!*color14: #0000ff
+!
+!! white
+!*color7:  #dcdccc
+!*color15: #2b2b2b
+!
 
 URxvt.perl-ext-common: default,matcher,fullscreen,clipboard,font-size
 URxvt.url-launcher: /usr/bin/xdg-open
@@ -66,7 +107,7 @@ URxvt.keysym.F11: perl:fullscreen:switch
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
 URxvt.secondaryWheel: 1
-URxvt.internalBorder:  5
+URxvt.internalBorder:  15
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 URxvt.keysym.Control-Up:   \033[1;5A

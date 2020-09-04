@@ -41,7 +41,7 @@ super + shift + n
 
 # terminal emulator
 super + Return
-	urxvt
+    alacritty	
 
 # program launcher
 super + d

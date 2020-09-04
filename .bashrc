@@ -1,3 +1,6 @@
+export PATH=$PATH:/home/saul/.local/bin
+
+
 #Personal Aliases
 #GIt bare
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'

@@ -3,7 +3,7 @@
 
 #### AUTOSTART ####
 sxhkd &
-compton --config /home/saul/.config/compton/compton.conf -b &
+picom &
 #xfce4-panel &
 #blueman-applet &
 #cbatticon &
@@ -23,7 +23,7 @@ compton --config /home/saul/.config/compton/compton.conf -b &
 bspc monitor -d 1 2 3 4 5 6 7 8 9  
  
 #Border gaps,width, and padding
-bspc config border_width         0
+bspc config border_width         0.5
 bspc config window_gap           5
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
