@@ -1,90 +1,90 @@
-let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
-let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
-let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
-let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
-let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
-let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
-let g:haskell_backpack = 1                " to enable highlighting of backpack keywordsset nocompatible
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 syntax on
+let mapleader = "\<SPACE>"
+set guicursor=
+set relativenumber
+set nohlsearch
+set hidden
+set noerrorbells
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set nu
+set nowrap
+set smartcase
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set termguicolors
+set scrolloff=8
+set noshowmode
+set completeopt=menuone,noinsert,noselect
 
-" Interpret Python Scripts
-autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>r
-" Setting Background Black
-highlight Normal ctermbg=Black
-" Tab width
-:set tabstop=4
-:set shiftwidth=4
-:set expandtab
+" Give more space for displaying messages.
+set cmdheight=2
+
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=50
+
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
 "Key Binds"
-:nnoremap <C-I> :IndentLinesToggle<CR> 
+
+
+
+nnoremap <leader>bk :bd<CR>
+nnoremap <leader>. :CtrlP<CR>
+nnoremap <leader>bn   <CR>:e<Space>
+nnoremap <leader>wh :sp<CR>
+nnoremap <leader>wc :close!<CR>
+nnoremap <leader>wv :vsp<CR>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+nnoremap <C-I> :IndentLinesToggle<CR> 
 map <C-n> :NERDTreeToggle<CR> 
-""""""""""""""""Status Line"""""""""""""""""
+
+nnoremap <Leader>, :buffers<CR>:buffer<Space>
+
 set laststatus=2
-" LEADER KEY
-:let mapleader = "\<SPACE>"
-" Line Numbers
-:set relativenumber
-" Close auto complete's preview window after insertion
+set relativenumber
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible              " be iMproved, required
-"filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin()
 
 " Plugins Here 
+Plug 'neovimhaskell/haskell-vim' 
+Plug 'vimwiki/vimwiki' 
+Plug 'ycm-core/YouCompleteMe'
+Plug 'Yggdroot/indentLine'
+Plug 'rrethy/vim-hexokinase'
+"Plun 'chrisbra/Colorizer' 
+Plug 'mattn/emmet-vim'
+Plug 'preservim/nerdtree'
+Plug 'morhetz/gruvbox'
+Plug 'kien/ctrlp.vim'
 
-
-
-" Haskell Syntax highlighting
-Plugin 'neovimhaskell/haskell-vim'
-" VIM WIKI
-Plugin 'vimwiki/vimwiki'
-" YCM
-Plugin 'ycm-core/YouCompleteMe'
-"Indentation line
-Plugin 'Yggdroot/indentLine'
-""""""""CSS COLORS"""""""""""""
-Plugin 'chrisbra/Colorizer' 
-""""""""" Emmet(html auto complete)
-Plugin 'mattn/emmet-vim'
-"NERDtree
-Plugin 'preservim/nerdtree'
-" gruvbox theme
-Plugin 'morhetz/gruvbox'
-
-"All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
+cal plug#end()
 
 let g:gruvbox_italic=1  "Enabling italics
-""Color Schema"
+autocmd vimenter * colorscheme gruvbox
+let g:gruvbox_contrast_dark='hard'
 
-"colorscheme desert-night"Desert night color scheme
-"TO load plugin colorschemes"
- autocmd vimenter * colorscheme gruvbox
- let g:gruvbox_contrast_dark='hard'
 
