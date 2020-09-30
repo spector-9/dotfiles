@@ -75,13 +75,12 @@ Plug 'vimwiki/vimwiki'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
 Plug 'rrethy/vim-hexokinase'
-"Plun 'chrisbra/Colorizer' 
 Plug 'mattn/emmet-vim'
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'kien/ctrlp.vim'
 
-cal plug#end()
+call plug#end()
 
 let g:gruvbox_italic=1  "Enabling italics
 autocmd vimenter * colorscheme gruvbox
