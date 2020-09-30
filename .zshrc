@@ -1,4 +1,28 @@
+# history for vim binds
+setopt  auto_cd  
+# Auto Pushd
+DIRSTACKSIZE=10
+setopt autopushd
+setopt pushdignoredups
+# CD Path
+cdpath=($HOME/projects)
+# Path Variable
+export PATH="$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
+# Aliases
 alias ls='ls --color'
+alias vim='nvim'
+alias ll='ls -al --color'
+alias d='dirs -v | head -10'
+alias 0='~0'
+alias 1='~1'
+alias 2='~2'
+alias 3='~3'
+alias 4='~4'
+alias 5='~5'
+alias 6='~6'
+alias 7='~7'
+alias 8='~8'
+alias 9='~9'
 # Set up the prompt
 
 autoload -Uz promptinit
@@ -10,6 +34,9 @@ setopt histignorealldups sharehistory
 # Use emacs(-e) or vi(-v) keybindings 
 bindkey -v
 
+bindkey "^R" history-beginning-search-backward
+#bindkey "^R" history-incremental-search-backward
+# Auto CD
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000

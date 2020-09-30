@@ -2,6 +2,8 @@
 ###############################
 
 #### AUTOSTART ####
+#tint2 &
+xsetroot -cursor_name left_ptr
 sxhkd &
 picom &
 #xfce4-panel &
@@ -13,9 +15,9 @@ picom &
 #synclient TapButton1=1 TapButton2=3 TapButton3=2 & #For laptop touchpad
 #xset -b & #For annoying beeping sounds
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-#nm-tray & 
+#nm-applet &
 #start-pulseaudio-x11
-#nitrogen --restore & 
+#nitrogen --restore &
  
 #### WORKSPACES AND BORDERS ####
  
