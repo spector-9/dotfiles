@@ -7,7 +7,7 @@ setopt pushdignoredups
 # CD Path
 cdpath=($HOME/projects)
 # Path Variable
-export PATH="$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/bash scripts:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
 # Aliases
 alias ls='ls --color'
 alias vim='nvim'
@@ -51,6 +51,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
+#test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''

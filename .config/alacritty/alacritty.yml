@@ -18,9 +18,9 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   #dimensions:
-  #  columns: 0
-  #  lines: 0
-
+  #    columns: 0
+  #    lines: 30
+    
   # Window position (changes require restart)
   #
   # Specified in number of pixels.
@@ -35,10 +35,10 @@ window:
   # by DPI and the specified value is always added at both opposing sides.
   padding:
     x: 9
-    y: 12
+    y: 15
 
   # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+  dynamic_padding: true
 
   # Window decorations
   #
@@ -60,7 +60,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  #startup_mode: Windowed
+  #startup_mode: Maximized
 
   # Window title
   title: Alacritty
@@ -118,6 +118,7 @@ font:
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
     family: MesloLGS NF 
+    #family: IBM Plex Mono
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -137,7 +138,7 @@ font:
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
     family:  MesloLGS NF 
-
+    #family: IBM Plex Mono
     # The `style` can be specified to pick a specific face.
     style: Bold
 
@@ -156,7 +157,7 @@ font:
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
     family:  MesloLGS NF  
-
+    #family: IBM Plex Mono
     # The `style` can be specified to pick a specific face.
     style: Italic
 
@@ -175,7 +176,7 @@ font:
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
     family:  MesloLGS NF   
-
+    #family: IBM Plex Mono
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
@@ -352,7 +353,6 @@ colors:
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 background_opacity: 0.8
-# background_opacity: 0.95
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -363,14 +363,14 @@ background_opacity: 0.8
 # Allow terminal applications to change Alacritty's window title.
 #dynamic_title: true
 
-#cursor:
+cursor:
   # Cursor style
   #
   # Values for `style`:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  #style: Block
+  style: Block
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
