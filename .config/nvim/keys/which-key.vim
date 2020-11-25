@@ -22,21 +22,20 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " Single mappings
-let g:which_key_map['n'] = [ ':CocCommand explorer'       , 'explorer' ]
-let g:which_key_map['.'] = [ ':Files'                     , 'search files' ]
+let g:which_key_map['n'] = [ ':CocCommand explorer'       , 'Explorer' ]
 " let g:which_key_map['r'] = [ ':Ranger'                    , 'ranger' ]
- " let g:which_key_map['S'] = [ ':Startify'                  , 'start screen' ]
+let g:which_key_map['S'] = [ ':Startify'                  , 'Start Screen' ]
 " let g:which_key_map['z'] = [ 'Goyo'                       , 'zen' ]
 " f is for files
 let g:which_key_map.s = {
-      \ 'name' : '+Session' ,
+      \ 'name' : 'Session' ,
       \ 's' : [':SSave[!]'     , 'Save session'],
       \ 'l' : [':SLoad '     , 'Load a session'],
       \ 'c' : [':SClose'     , 'Close a session'],
       \ 'd' : [':SDelete[!]'  , 'Delete a session'],
       \}
 let g:which_key_map.w = {
-      \ 'name' : '+windows' ,
+      \ 'name' : 'Windows' ,
       \ 'w' : ['<C-W>w'     , 'other-window'],
       \ 'h' : [':sp '     , 'Horizontal split '],
       \ 'v' : [':vsp'     , 'Vertical split'],
@@ -48,19 +47,25 @@ let g:which_key_map.w = {
       \ '=' : ['<C-W>='     , 'balance-window']        ,
       \}
 let g:which_key_map.b = {
-      \ 'name' : '+buffer' ,
+      \ 'name' : 'Buffer' ,
       \ 'n' : [':e new'     , 'New buffer'],
       \ 'k' : [':bd'     , 'Kill buffer'],
       \}
 
 let g:which_key_map.f = {
-      \ 'name' : '+Find' ,
-      \ '.' : [':Rg '     , 'Search for a string'],
+      \ 'name' : 'Find' ,
+      \ 's' : [':Rg '     , 'String'],
+      \ 'f' : [':Files'   , 'File'],
       \}
 
 let g:which_key_map.g = {
-      \ 'name' : '+Git' ,
+      \ 'name' : 'Git' ,
       \ '.' : [':GFiles'     , 'Search a file in git project'],
+      \}
+let g:which_key_map.v = {
+      \ 'name' : 'Variable' ,
+      \ 'r' : ['<Plug>(coc-rename)'     , 'Rename'],
+      \ 'e' : [':CocList -I symbols'     , 'Refrences'],
       \}
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")

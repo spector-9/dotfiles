@@ -7,11 +7,11 @@ setopt pushdignoredups
 # CD Path
 cdpath=($HOME/projects)
 # Path Variable
-export PATH="$HOME/bash scripts:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
+export PATH="/home/$USER/wx/wxWidgets-3.1.3/lib/gtk3_so/bin:$HOME/bash scripts:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
 # Aliases
-alias ls='ls --color'
+alias ls='ls --color=auto'
 alias vim='nvim'
-alias ll='ls -al --color'
+alias ll='ls -al --color=auto'
 alias d='dirs -v | head -10'
 alias 0='~0'
 alias 1='~1'
@@ -68,3 +68,8 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+if [ -x /usr/bin/task ]; then
+    task next
+fi
+

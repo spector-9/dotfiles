@@ -1,5 +1,11 @@
-######### MY PERSONAL KEYBINDS ########### 
+# Minimize a node
 
+super + shift + f
+    /home/saul/.config/sxhkd/winhide
+# Scratchpad Terminal script 
+super + u
+    /home/saul/.config/sxhkd/scratchtermtoggle
+# Application Summons
 super + shift + m
 	firefox
 super + shift + n
@@ -59,6 +65,9 @@ super + Escape
 #super + alt + Escape
 #	bspc quit
 
+# Rotate nodes
+super + r
+    bspc node @/ -R 90
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
@@ -81,7 +90,9 @@ super + g
 
 # set the window state
 super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+	bspc node -t {tiled & /home/saul/bash\ scripts/normalvimterminal ,pseudo_tiled,floating,fullscreen & /home/saul/bash\ scripts/fullvimterminal }
+	#bspc node -t {tiled ,pseudo_tiled,floating,fullscreen}
+    
 
 # set the node flags
 super + ctrl + {x,y,z}

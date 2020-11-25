@@ -1,6 +1,6 @@
 #! /bin/sh
 ###############################
-
+# scratchpad terminal
 #### AUTOSTART ####
 #tint2 &
 xsetroot -cursor_name left_ptr
@@ -18,7 +18,8 @@ picom &
 #nm-applet &
 #start-pulseaudio-x11
 #nitrogen --restore &
- 
+st -c scratchterm &
+bspc rule -a scratchterm sticky=on state=floating hidden=on
 #### WORKSPACES AND BORDERS ####
  
 #Monitor allocation and their workspaces
