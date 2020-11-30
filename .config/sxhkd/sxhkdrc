@@ -15,30 +15,24 @@ super + shift + n
 # VOLUME
 
 ### Mute
-#XF86AudioMute
-#	amixer set Master toggle
+XF86AudioMute
+   /home/saul/.config/sxhkd/scripts/volume.sh mute
 
 ### Master Volume
-#XF86AudioRaiseVolume
-#	amixer set Master 2.5%+,5%+; 
+XF86AudioRaiseVolume
+    /home/saul/.config/sxhkd/scripts/volume.sh up	
 
-#super + XF86AudioRaiseVolume
-#	amixer set Master 0.5%+,1%+; 
-
-#XF86AudioLowerVolume
-#	amixer set Master 2.5%-,5%-; 
-
-#super + XF86AudioLowerVolume
-#	amixer set Master 0.5%-,1%-; 
+XF86AudioLowerVolume
+    /home/saul/.config/sxhkd/scripts/volume.sh 	down
 
 # BRIGHTNESS
 
 # Brightness goes up
-#XF86MonBrightnessUp
-	xbacklight -inc 10;
+XF86MonBrightnessUp
+    brightnessctl set 25+
 # Brightness goes down
-#XF86MonBrightnessDown
-	xbacklight -dec 10;
+XF86MonBrightnessDown
+    brightnessctl set 25-
 
 ##########################################
 #
@@ -62,8 +56,8 @@ super + Escape
 #
 
 # quit bspwm normally
-#super + alt + Escape
-#	bspc quit
+super + alt + Escape
+	bspc quit
 
 # Rotate nodes
 super + r
