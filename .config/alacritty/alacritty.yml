@@ -117,6 +117,7 @@ font:
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
+    #family: FiraCode Nerd Font
     family: MesloLGS NF 
     #family: IBM Plex Mono
 
@@ -137,6 +138,7 @@ font:
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
+    #family: FiraCode Nerd Font
     family:  MesloLGS NF 
     #family: IBM Plex Mono
     # The `style` can be specified to pick a specific face.

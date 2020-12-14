@@ -4,7 +4,7 @@
 killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 polybar -c ~/.config/polybar/config.ini main &
-
+##
 xsetroot -cursor_name left_ptr
 sxhkd &
 nitrogen --restore &
@@ -29,11 +29,13 @@ bspc rule -a scratchterm sticky=on state=floating hidden=on
 bspc monitor -d 1 2 3 4 5 6 7 8 9  
  
 #Border gaps,width, and padding
-bspc config border_width         0.5
+bspc config border_width         1
 bspc config window_gap           5
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+#bspc config normal_border_color "#db5b05"
+bspc config focused_border_color "#3296b4"
  
 bspc config top_padding          65
 bspc config bottom_padding       10

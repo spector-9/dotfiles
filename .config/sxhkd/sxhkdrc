@@ -1,3 +1,6 @@
+# Application switch
+alt + Tab
+    /home/saul/.config/sxhkd/scripts/app_switch
 # Minimize a node
 
 super + shift + f
@@ -45,7 +48,8 @@ super + Return
 
 # program launcher
 super + d
-	dmenu_run -b -sb darkred
+    /home/saul/.config/sxhkd/scripts/menu
+	#dmenu_run -b -sb darkred
 
 # make sxhkd reload its configuration files:
 super + Escape
