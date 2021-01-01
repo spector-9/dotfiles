@@ -73,4 +73,13 @@ set background=dark
 " autocmd vimenter * colorscheme gruvbox
 let g:gruvbox_contrast_dark='hard'
 
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
+
+let g:vimwiki_list = [{'path': '/home/saul/vimwiki',
+  \ 'path_html': '/home/saul/vimwiki_html',
+  \ 'syntax': 'markdown',
+  \ 'ext': '.md',
+  \ 'custom_wiki2html': '/home/saul/custom_wiki.sh'}]
+let g:vimwiki_customwiki2html=$HOME.'/home/saul/custom_wiki.sh'

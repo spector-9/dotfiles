@@ -1,13 +1,11 @@
 # Application switch
 alt + Tab
     /home/saul/.config/sxhkd/scripts/app_switch
-# Minimize a node
 
-super + shift + f
-    /home/saul/.config/sxhkd/winhide
 # Scratchpad Terminal script 
 super + u
     /home/saul/.config/sxhkd/scratchtermtoggle
+
 # Application Summons
 super + shift + m
 	firefox
@@ -85,10 +83,12 @@ super + g
 #
 # state/flags
 #
-
+super + n
+    alacritty --class scratchterm,scratchterm -t scratchterm -e  /home/saul/.config/sxhkd/scripts/notetaking.sh
 # set the window state
 super + {t,shift + t,s,f}
-	bspc node -t {tiled & /home/saul/bash\ scripts/normalvimterminal ,pseudo_tiled,floating,fullscreen & /home/saul/bash\ scripts/fullvimterminal }
+	bspc node -t {tiled & /home/saul/.config/sxhkd/scripts/term_padding  ,pseudo_tiled,floating,fullscreen & /home/saul/.config/sxhkd/scripts/term_padding }
+    
 	#bspc node -t {tiled ,pseudo_tiled,floating,fullscreen}
     
 

@@ -31,6 +31,7 @@ alias 6='~6'
 alias 7='~7'
 alias 8='~8'
 alias 9='~9'
+alias tb='taskbook'
 # Set up the prompt
 
 autoload -Uz promptinit
@@ -74,9 +75,12 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 
-if [ -x /usr/bin/task ]; then
-    task next
-fi
+#if [ -x /usr/bin/taskbook ]; then
+#    taskbook
+#fi
+#if [ -x /usr/bin/task ]; then
+#    task next
+#fi
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 

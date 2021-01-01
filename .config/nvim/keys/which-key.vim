@@ -27,6 +27,12 @@ let g:which_key_map['n'] = [ ':CocCommand explorer'       , 'Explorer' ]
 let g:which_key_map['S'] = [ ':Startify'                  , 'Start Screen' ]
 " let g:which_key_map['z'] = [ 'Goyo'                       , 'zen' ]
 " f is for files
+
+let g:which_key_map.t = {
+      \ 'name' : 'Tabs' ,
+      \ 't' : [':split term://zsh'     , 'Open terminal'],
+      \ 'n' : ['tabedit'     , 'Open terminal'],
+      \}
 let g:which_key_map.s = {
       \ 'name' : 'Session' ,
       \ 's' : [':SSave[!]'     , 'Save session'],
@@ -40,16 +46,13 @@ let g:which_key_map.w = {
       \ 'h' : [':sp '     , 'Horizontal split '],
       \ 'v' : [':vsp'     , 'Vertical split'],
       \ 'c' : [':close!'  , 'Close window'],
-      \ 'H' : ['<C-W>5<'    , 'expand-window-left']    ,
-      \ 'J' : [':resize +5'  , 'expand-window-below']   ,
-      \ 'L' : ['<C-W>5>'    , 'expand-window-right']   ,
-      \ 'K' : [':resize -5'  , 'expand-window-up']      ,
       \ '=' : ['<C-W>='     , 'balance-window']        ,
       \}
 let g:which_key_map.b = {
       \ 'name' : 'Buffer' ,
       \ 'n' : [':e new'     , 'New buffer'],
       \ 'k' : [':bd'     , 'Kill buffer'],
+      \ 'r' : [':e'     , 'Refresh buffer'],
       \}
 
 let g:which_key_map.f = {

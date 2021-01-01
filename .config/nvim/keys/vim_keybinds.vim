@@ -1,9 +1,5 @@
 "Key Binds"
 
-" Bind 'TAB' in COC 
-
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Trigger completion menu
 function! s:check_back_space() abort
       let col = col('.') - 1
@@ -15,10 +11,16 @@ function! s:check_back_space() abort
 		  \ <SID>check_back_space() ? "\<C-Space>" :
 		  \ coc#refresh()
 
+" Bind 'TAB' in COC 
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+" Exit terminal
+tnoremap <C-n> <C-\><C-n>
 " gd - go to definition of word under cursor
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -32,13 +34,23 @@ nnoremap <silent> gh :call <SID>show_documentation()<CR>
 map z/ <Plug>(incsearch-easymotion-/)
 map z? <Plug>(incsearch-easymotion-?)
 map zg/ <Plug>(incsearch-easymotion-stay)
+
 nnoremap <leader>, :Buffers   <CR>
 nnoremap <leader>. :Files   <CR>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
-nnoremap <C-I> :IndentLinesToggle<CR> 
+
+nnoremap <C-u> :IndentLinesToggle<CR> 
+nnoremap <C-c> :VimwikiAll2HTML <CR> 
+nnoremap <C-H> <C-W>5<
+nnoremap <C-J> :resize +5<CR> 
+nnoremap <C-L> <C-W>5>    
+nnoremap <C-K> :resize -5<CR>
+
+nmap <Tab> :tabnext<Return>
+nmap <S-Tab> :tabprev<Return>
 " Use <C-l> for trigger snippet expand.
 imap <C-j> <Plug>(coc-snippets-expand)
 " Use <C-j> for select text for visual placeholder of snippet.
