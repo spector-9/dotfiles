@@ -13,11 +13,10 @@ The directory structure might seem weird to people who haven't used GNU stow.
 However its pretty easy to setup after fresh install that's why I switched to it.
 
 
-- **Here are steps to setup your system with these dotfiles.**
+**Here are steps to setup your system with these dotfiles.**
 1. Git clone this repo
 2. Install GNU stow (Use your system's package manager)
 3. CD into cloned directory and then run the command 
-    
     stow *
 4. Sym-links will be created automatically.
 5. Voilà! You are done.
