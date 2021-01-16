@@ -42,7 +42,7 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
-nnoremap <C-u> :IndentLinesToggle<CR> 
+"nnoremap <C-u> :IndentLinesToggle<CR> 
 nnoremap <C-c> :VimwikiAll2HTML <CR> 
 nnoremap <C-H> <C-W>5<
 nnoremap <C-J> :resize +5<CR> 

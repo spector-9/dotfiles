@@ -11,6 +11,8 @@ super + shift + m
 	waterfox
 super + shift + n
 	thunar
+super + shift + b
+    alacritty -e nnn -e
 
 
 # VOLUME
