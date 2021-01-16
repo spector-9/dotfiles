@@ -17,8 +17,13 @@ cdpath=($HOME/projects)
 # Path Variable
 export PATH="/home/$USER/wx/wxWidgets-3.1.3/lib/gtk3_so/bin:$HOME/bash scripts:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
 # Aliases
+alias update='sudo pacman -Syu'
+alias install='sudo pacman -S'
+alias hist='history 1 | cut -d " "  -f 6- | rofi -dmenu | xclip -selection clipboard'
+alias remove='sudo pacman -Rcns'
 alias ls='ls --color=auto'
 alias vim='nvim'
+alias v='nvim'
 alias ll='ls -alh --color=auto'
 alias d='dirs -v | head -10'
 alias 0='~0'

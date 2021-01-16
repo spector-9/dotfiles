@@ -39,7 +39,8 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 set laststatus=0
 set relativenumber
 
-
+" Label Mode for Vim Sneak
+let g:sneak#label = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -83,3 +84,4 @@ let g:vimwiki_list = [{'path': '/home/saul/vimwiki',
   \ 'ext': '.md',
   \ 'custom_wiki2html': '/home/saul/custom_wiki.sh'}]
 let g:vimwiki_customwiki2html=$HOME.'/home/saul/custom_wiki.sh'
+
