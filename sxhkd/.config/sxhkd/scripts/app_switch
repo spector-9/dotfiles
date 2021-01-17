@@ -52,11 +52,3 @@ rofi -no-lazy-grab -show window \
 -color-active "$BACKGROUND,$MAGENTA,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 -color-urgent "$BACKGROUND,$YELLOW,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND"
 
-# More Options
-# -fullscreen \
-
-# Theming help
-# color window = background, border, separator
-# color normal = background, foreground, background-alt, highlight-background, highlight-foreground
-# color active = background, foreground, background-alt, highlight-background, highlight-foreground
-# color urgent = background, foreground, background-alt, highlight-background, highlight-foreground

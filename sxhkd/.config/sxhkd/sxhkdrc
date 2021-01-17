@@ -1,11 +1,3 @@
-# Application switch
-alt + Tab
-    /home/saul/.config/sxhkd/scripts/app_switch
-
-# Scratchpad Terminal script 
-super + u
-    /home/saul/.config/sxhkd/scratchtermtoggle
-
 # Application Summons
 super + shift + m
 	waterfox
@@ -19,14 +11,14 @@ super + shift + b
 
 ### Mute
 XF86AudioMute
-   /home/saul/.config/sxhkd/scripts/volume.sh mute
+    "$HOME"/.config/sxhkd/scripts/volume.sh mute
 
 ### Master Volume
 XF86AudioRaiseVolume
-    /home/saul/.config/sxhkd/scripts/volume.sh up	
+    "$HOME"/.config/sxhkd/scripts/volume.sh up	
 
 XF86AudioLowerVolume
-    /home/saul/.config/sxhkd/scripts/volume.sh 	down
+    "$HOME"/.config/sxhkd/scripts/volume.sh down
 
 # BRIGHTNESS
 
@@ -37,10 +29,17 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     brightnessctl set 25-
 
-##########################################
-#
 # wm independent hotkeys
-#
+
+# Application switch
+super  + F1
+    "$HOME"/.config/sxhkd/scripts/screenshot_maim.sh 
+alt + Tab
+    "$HOME"/.config/sxhkd/scripts/app_switch
+
+# Scratchpad Terminal script 
+super + u
+    "$HOME"/.config/sxhkd/scratchtermtoggle
 
 # terminal emulator
 super + Return
@@ -48,13 +47,16 @@ super + Return
 
 # program launcher
 super + d
-    /home/saul/.config/sxhkd/scripts/menu
+    "$HOME"/.config/sxhkd/scripts/menu
 	#dmenu_run -b -sb darkred
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# Notepad to take notes ( Vimwiki req.)
+super + n
+    alacritty --class scratchterm,scratchterm -t scratchterm -e "$HOME"/.config/sxhkd/scripts/notetaking.sh
 #
 # bspwm hotkeys
 #
@@ -66,6 +68,7 @@ super + alt + Escape
 # Rotate nodes
 super + r
     bspc node @/ -R 90
+
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
@@ -85,12 +88,10 @@ super + g
 #
 # state/flags
 #
-super + n
-    alacritty --class scratchterm,scratchterm -t scratchterm -e  /home/saul/.config/sxhkd/scripts/notetaking.sh
+
 # set the window state
 super + {t,shift + t,s,f}
-	bspc node -t {tiled & /home/saul/.config/sxhkd/scripts/term_padding  ,pseudo_tiled,floating,fullscreen & /home/saul/.config/sxhkd/scripts/term_padding }
-    
+	bspc node -t {tiled & "$HOME"/.config/sxhkd/scripts/term_padding ,pseudo_tiled,floating,fullscreen & "$HOME"/.config/sxhkd/scripts/term_padding }
 	#bspc node -t {tiled ,pseudo_tiled,floating,fullscreen}
     
 
