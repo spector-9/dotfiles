@@ -9,17 +9,29 @@
 * These dotfiles are specifically customised for bspwm however I tried to keep them as universal as possible.
 
 The directory structure might seem weird to people who haven't used GNU stow.
-
-However its pretty easy to setup after fresh install that's why I switched to it.
+However its pretty easy to setup after fresh install that's why I switched to it. The installation script is made just for Arch for now. 
+If you want to use it then just replace the pacman command with you system package manager.
 
 
 **Here are steps to setup your system with these dotfiles.**
+
 1. Git clone this repo
-2. Install GNU stow, BSPWM, Dunst, SXHKD, Polybar, Stalonetray, Picom, tmux, nvim, zsh.  (Use your system's package manager)
-3. CD into cloned directory and then run the command 
-   
-    stow *
-4. Sym-links will be created automatically.
-5. Voilà! You are done.
+2. CD into cloned directory and run the command
+```shell
+chmod +x install_script.sh
+```
+3. Now to install required programs run this command 
+```shell
+./install_script.sh install
+```
+4. To enable services like network manager run
+```shell
+./install_script.sh service
+```
+5. Now to link all the dotfiles
+```shell
+./install_script.sh link
+```
+6. Voilà! You are done.
 
 
