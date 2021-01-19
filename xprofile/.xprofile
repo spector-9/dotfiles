@@ -1,3 +1,2 @@
-setxkbmap -option caps:swapescape
 parcellite -n &
 
