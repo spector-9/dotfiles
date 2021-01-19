@@ -34,4 +34,6 @@ chmod +x install_script.sh
 ```
 6. Voilà! You are done.
 
+**Credits**
+- [[https://github.com/adi1090x/polybar-themes]] Thanks to adi1090x, I am using a modified version of his polybar-1 config.
 
