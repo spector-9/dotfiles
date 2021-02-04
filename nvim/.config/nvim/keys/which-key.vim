@@ -31,7 +31,7 @@ let g:which_key_map['S'] = [ ':Startify'                  , 'Start Screen' ]
 let g:which_key_map.t = {
       \ 'name' : 'Tabs' ,
       \ 't' : [':split term://zsh'     , 'Open terminal'],
-      \ 'n' : ['tabedit'     , 'Open terminal'],
+      \ 'n' : ['tabedit'     , 'New tab'],
       \}
 let g:which_key_map.s = {
       \ 'name' : 'Session' ,
@@ -42,11 +42,11 @@ let g:which_key_map.s = {
       \}
 let g:which_key_map.w = {
       \ 'name' : 'Windows' ,
-      \ 'w' : ['<C-W>w'     , 'other-window'],
+      \ 'w' : ['<C-W>w'     , 'Other-window'],
       \ 'h' : [':sp '     , 'Horizontal split '],
       \ 'v' : [':vsp'     , 'Vertical split'],
       \ 'c' : [':close!'  , 'Close window'],
-      \ '=' : ['<C-W>='     , 'balance-window']        ,
+      \ '=' : ['<C-W>='     , 'Balance-window']        ,
       \}
 let g:which_key_map.b = {
       \ 'name' : 'Buffer' ,

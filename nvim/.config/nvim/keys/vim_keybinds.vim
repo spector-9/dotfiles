@@ -42,7 +42,7 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
-"nnoremap <C-u> :IndentLinesToggle<CR> 
+nnoremap <C-u> :IndentLinesToggle<CR> 
 nnoremap <C-c> :VimwikiAll2HTML <CR> 
 nnoremap <C-H> <C-W>5<
 nnoremap <C-J> :resize +5<CR> 
@@ -60,3 +60,7 @@ let g:coc_snippet_prev = '<c-h>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-k> <Plug>(coc-snippets-expand-jump)
+
+" Keybind to convert md file to pdf
+nnoremap <F2> :! "$HOME"/projects/bash_scripts/mdtopdf.sh %<Return>
+nnoremap <F3> :! "$HOME"/projects/bash_scripts/mdtopdf.sh % open<Return>
