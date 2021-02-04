@@ -1,3 +1,4 @@
+let g:vimwiki_global_ext = 0
 set spell spelllang=en_us
 set iskeyword+=-
 set splitbelow                          " Horizontal splits will automatically be below
@@ -83,5 +84,6 @@ let g:vimwiki_list = [{'path': '/home/saul/vimwiki',
   \ 'syntax': 'markdown',
   \ 'ext': '.md',
   \ 'custom_wiki2html': '/home/saul/custom_wiki.sh'}]
-let g:vimwiki_customwiki2html=$HOME.'/home/saul/custom_wiki.sh'
 
+
+let g:vimwiki_customwiki2html=$HOME.'/home/saul/custom_wiki.sh'

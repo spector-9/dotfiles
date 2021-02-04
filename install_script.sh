@@ -4,7 +4,7 @@
 if [ $1 = "install" ] ; then
     sudo pacman -Syu 
     sudo pacman -S bspwm sxhkd polybar picom stalonetray dunst nitrogen alacritty network-manager-applet blueman rofi maim pulseaudio pasystray nm-connection-editor \
-    thunar xfce4-power-manager yay lxappearance parcellite xclip zathura neovim udiskie zsh stow
+    thunar xfce4-power-manager yay lxappearance parcellite xclip zathura neovim udiskie zsh stow thunar-volman polkit-gnome
 fi
 
 
@@ -15,6 +15,6 @@ fi
 
 # Sym-linking dot-files
 if [ $1 = "link" ] ; then
-    stow -v $(ls -a -I "README.md" -I "keyboard and mouse config" -I ".git*" -I "install_script.sh" -I ".." -I ".")
+    stow -v $(ls -A -I "README.md" -I "keyboard and mouse config" -I ".git*" -I "install_script.sh")
 fi
 

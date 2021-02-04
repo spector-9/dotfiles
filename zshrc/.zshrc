@@ -15,7 +15,7 @@ setopt pushdignoredups
 # CD Path
 cdpath=($HOME/projects)
 # Path Variable
-export PATH="/home/$USER/wx/wxWidgets-3.1.3/lib/gtk3_so/bin:$HOME/bash scripts:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
+export PATH="/home/$USER/wx/wxWidgets-3.1.3/lib/gtk3_so/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 # Aliases
 alias update='sudo pacman -Syu'
 alias install='sudo pacman -S'
@@ -80,12 +80,6 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 
-#if [ -x /usr/bin/taskbook ]; then
-#    taskbook
-#fi
-#if [ -x /usr/bin/task ]; then
-#    task next
-#fi
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
