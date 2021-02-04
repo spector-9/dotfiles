@@ -35,21 +35,27 @@ LIGHT_GREEN="#7cb342"
 
 # Main Script
 directory="$HOME/Media/Pictures/SS/"
+file_name=$(date +%m"-"%d"-"%y"_"%H":"%M":"%S)
 first_prompt="Fullscreen
 Select a window or region
-Copy to clipboard"
+Copy to clipboard
+Diagram"
 
 
 fullscreen (){
-    file_name=$(date +%m"-"%d"-"%y"_"%I":"%M":"%S)
     maim -m 1 "$directory""$file_name"".png"
-    notify-send -t 1200 "Screenshot saved" -i $HOME/Media/Pictures/SS/"$file_name".png
+    [ -f "$directory""$file_name".png ] && notify-send -t 1200 "Screenshot saved" -i "$directory""$file_name".png
 }
 
 window (){
-    file_name=$(date +%m"-"%d"-"%y"_"%I":"%M":"%S)
     maim -s -m 1 "$directory""$file_name"".png"
-    notify-send -t 1200 "Screenshot saved" -i $HOME/Media/Pictures/SS/"$file_name".png
+    [ -f "$directory""$file_name".png ] && notify-send -t 1200 "Screenshot saved" -i "$directory""$file_name".png
+}
+
+window_dia (){
+    file_name=$(rofi -dmenu -p 'File name' -lines 1 -width 530 -xoffset 00 -yoffset -450 -bw 0 -color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND")
+    maim -s -m 1 "$HOME/vimwiki/diagrams/""$file_name"".png"
+    [ -f "$HOME"/vimwiki/diagrams/"$file_name".png ] && notify-send -t 1200 "Screenshot saved" -i "$HOME"/vimwiki/diagrams/"$file_name".png
 }
 
 fullscreen_clipboard (){
@@ -93,7 +99,7 @@ function_select (){
     chosen=$(echo "$first_prompt" | rofi -dmenu -i -p "Screenshot area" -no-lazy-grab -show window \
     -hide-scrollbar true \
     -bw 0 \
-    -lines 3 \
+    -lines 4 \
     -line-padding 8 \
     -padding 10 \
     -width 520 \
@@ -109,7 +115,8 @@ function_select (){
     case $chosen in
         Fullscreen) fullscreen;;
         "Select a window or region") window;;
-        "Copy to clipboard")  function_select_clipboard;;
+        "Copy to clipboard") function_select_clipboard;;
+        "Diagram") window_dia;;
     esac
 }
 

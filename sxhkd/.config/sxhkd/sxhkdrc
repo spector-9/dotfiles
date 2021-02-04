@@ -12,11 +12,9 @@ super + shift + b
 ### Mute
 XF86AudioMute
     "$HOME"/.config/sxhkd/scripts/volume.sh mute
-
 ### Master Volume
 XF86AudioRaiseVolume
     "$HOME"/.config/sxhkd/scripts/volume.sh up	
-
 XF86AudioLowerVolume
     "$HOME"/.config/sxhkd/scripts/volume.sh down
 
@@ -31,15 +29,21 @@ XF86MonBrightnessDown
 
 # wm independent hotkeys
 
-# Application switch
+# Screenshot script
 super  + F1
     "$HOME"/.config/sxhkd/scripts/screenshot_maim.sh 
+
+# Open notes index in browser
+super + F2
+    $BROWSER $HOME/vimwiki_html/index.html
+
+# Application switch
 alt + Tab
     "$HOME"/.config/sxhkd/scripts/app_switch
 
 # Scratchpad Terminal script 
-super + u
-    "$HOME"/.config/sxhkd/scratchtermtoggle
+#super + u
+#    "$HOME"/.config/sxhkd/scratchtermtoggle
 
 # terminal emulator
 super + Return
