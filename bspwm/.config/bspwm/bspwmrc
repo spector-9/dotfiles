@@ -1,37 +1,8 @@
 #! /bin/sh
 
-# launch polybar safely
-killall -q polybar
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-polybar -c ~/.config/polybar/config.ini main &
-##
-xsetroot -cursor_name left_ptr
-killall sxhkd
-sxhkd &
-killall nitrogen
-nitrogen --restore &
-killall picom
-picom --experimental-backends &
-killall mpd
-mpd &
-killall polkit-gnome-authentication-agent-1
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-start-pulseaudio-x11
-killall stalonetray
-stalonetray &
-killall xfce4-power-manager
-xfce4-power-manager &
-killall nm-applet
-nm-applet &
-killall blueman-applet
-blueman-applet &
-killall pasystray
-pasystray -m 100 &
-killall dunst
-dunst &
-killall udiskie
-udiskie &
+"$HOME"/.config/bspwm/autostart.sh &
+
 #cbatticon -u 10 -x "notify-send $(cat /sys/class/power_supply/BAT1/capacity)" &
 # Scratch term
 #st -c scratchterm &
