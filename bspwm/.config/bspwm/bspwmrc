@@ -12,7 +12,8 @@ bspc rule -a scratchterm sticky=on state=floating
 #### WORKSPACES AND BORDERS ####
  
 #Monitor allocation and their workspaces
-bspc monitor -d 1 2 3 4 5 6 7 8 9  
+[ $(xrandr -q | grep ' connected ' | awk '{print $1}' | wc -l) -eq 2 ] && (bspc monitor eDP -d 1 2 3 4 5; bspc monitor HDMI-A-0 -d 6 7 8 9 0) || bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
  
 #Border gaps,width, and padding
 bspc config border_width         1
@@ -23,7 +24,7 @@ bspc config gapless_monocle      true
 #bspc config normal_border_color "#db5b05"
 bspc config focused_border_color "#3296b4"
  
-bspc config top_padding          65
+bspc config top_padding          50
 bspc config bottom_padding       10
 bspc config left_padding         10
 bspc config right_padding        10
