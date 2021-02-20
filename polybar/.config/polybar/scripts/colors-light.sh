@@ -432,3 +432,7 @@ echo "Available options:
 -lime		-orange			-pink			-purple
 -red		-teal			-yellow"
 fi
+
+
+
+sleep 0.01 && ([ ! -z "$(pgrep -x stalonetray )" ] && killall stalonetray) 2> /dev/null; stalonetray &
