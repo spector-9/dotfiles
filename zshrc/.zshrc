@@ -17,11 +17,15 @@ cdpath=($HOME/projects)
 # Path Variable
 export PATH="/home/$USER/wx/wxWidgets-3.1.3/lib/gtk3_so/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 # Aliases
+alias sudo='doas'
+alias yt='ytfzf'
 alias update='sudo pacman -Syu'
-alias install='sudo pacman -S'
+alias inst='sudo pacman -S'
 alias hist='history 1 | cut -d " "  -f 6- | rofi -dmenu | xclip -selection clipboard'
 alias remove='sudo pacman -Rcns'
+alias search='pacman -Ss'
 alias ls='ls --color=auto'
+alias rm='rm -I'
 alias vim='nvim'
 alias v='nvim'
 alias ll='ls -alh --color=auto'
@@ -52,8 +56,8 @@ bindkey "^R" history-beginning-search-backward
 #bindkey "^R" history-incremental-search-backward
 # Auto CD
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.config/.zsh_history
 
 # Use modern completion system
@@ -79,10 +83,16 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+## pyenv configs
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/zsh-configs/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /home/saul/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[[ ! -f ~/.config/zsh-configs/.p10k.zsh ]] || source ~/.config/zsh-configs/.p10k.zsh
+source ~/.config/zsh-configs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
