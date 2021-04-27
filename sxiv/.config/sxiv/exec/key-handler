@@ -1,0 +1,9 @@
+#!/bin/sh
+while read file
+do
+        case "$1" in
+        "w")
+                "$HOME"/projects/bash_scripts/sxiv_wall.sh "$file" ;;
+        esac
+done
+
