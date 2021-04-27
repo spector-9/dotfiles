@@ -434,4 +434,4 @@ echo "Available options:
 fi
 
 
-sleep 0.01 && ([ ! -z "$(pgrep -x stalonetray )" ] && killall stalonetray) 2> /dev/null; stalonetray &
+sleep 0.04 && ([ ! -z "$(pgrep -x stalonetray )" ] && killall stalonetray) 2> /dev/null; stalonetray &
