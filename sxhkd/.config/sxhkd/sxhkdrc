@@ -2,7 +2,7 @@
 super + shift + m
 	waterfox
 super + shift + n
-	thunar
+	pcmanfm
 super + shift + b
     alacritty -e nnn -e
 

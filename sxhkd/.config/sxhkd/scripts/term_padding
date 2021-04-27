@@ -1,7 +1,7 @@
 #!/bin/bash
 # A simple script to change terminal padding.
-current_value_x=$(awk 'NR==36 {print $2}' /home/saul/.config/alacritty/alacritty.yml)
-current_value_y=$(awk 'NR==37 {print $2}' /home/saul/.config/alacritty/alacritty.yml)
+current_value_x=$(awk 'NR==36 {print $2}' $HOME/.config/alacritty/alacritty.yml)
+current_value_y=$(awk 'NR==37 {print $2}' $HOME/.config/alacritty/alacritty.yml)
 
 if [ $current_value_x -eq 9 -a  $current_value_y -eq 10 ]
 then
@@ -13,4 +13,4 @@ else
 
 fi
 
-sed -i "36s/$current_value_x/$rep_value_x/;37s/$current_value_y/$rep_value_y/" /home/saul/.config/alacritty/alacritty.yml
+sed -i "36s/$current_value_x/$rep_value_x/;37s/$current_value_y/$rep_value_y/" $HOME/.config/alacritty/alacritty.yml
