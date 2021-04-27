@@ -7,6 +7,9 @@ polybar -c ~/.config/polybar/config.ini main &
 [ ! -z "$(pgrep -x sxhkd)" ] && killall sxhkd 
 sxhkd &
 
+[ ! -z "$(pgrep -x parcellite)" ] && killall parcellite
+parcellite -n &
+
 nitrogen --restore &
 
 [ ! -z "$(pgrep -x picom)" ] && killall picom 
@@ -17,12 +20,6 @@ mpd &
 
 [ ! -z "$(pgrep -x polkit-gnome-authentication-agent-1)" ] && killall polkit-gnome-authentication-agent-1 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
-pulseaudio --kill
-start-pulseaudio-x11 
-
-[ ! -z "$(pgrep -x stalonetray )" ] && killall stalonetray 
-stalonetray &
 
 [ ! -z "$(pgrep -x xfce4-power-manager )" ] && killall xfce4-power-manager 
 xfce4-power-manager &
@@ -41,3 +38,7 @@ dunst &
 
 [ ! -z "$(pgrep -x udiskie )" ] && killall udiskie 
 udiskie &
+
+[ ! -z "$(pgrep -x stalonetray )" ] && killall stalonetray 
+sleep 5
+stalonetray &
