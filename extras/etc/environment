@@ -1,0 +1,8 @@
+# Syntax: simple "KEY=VAL" pairs on separate lines
+
+RADV_PERFTEST=aco
+EDITOR=nvim
+BROWSER=waterfox
+NNN_PLUG='v:imgview;p:preview-tabbed'
+NNN_FIFO=/tmp/nnn.fifo
+
