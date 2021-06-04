@@ -1,5 +1,6 @@
 let g:vimwiki_global_ext = 0
 set spell spelllang=en_us
+set dictionary=~/.config/nvim/american-english
 set iskeyword+=-
 set splitbelow                          " Horizontal splits will automatically be below
 set splitright
@@ -38,7 +39,6 @@ set updatetime=50
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set laststatus=0
-set relativenumber
 
 " Label Mode for Vim Sneak
 let g:sneak#label = 1

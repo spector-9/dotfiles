@@ -74,9 +74,7 @@ case $1 in
 esac
 
 # Replacing colors
-[ $current_color != '' ] 2>/dev/null && sed -i -e "s/HIGHLIGHT_BACKGROUND=.*/HIGHLIGHT_BACKGROUND=""$current_color""/g" $PDIR/menu
-[ $current_color != '' ] 2>/dev/null && sed -i -e "s/HIGHLIGHT_BACKGROUND=.*/HIGHLIGHT_BACKGROUND=""$current_color""/g" $PDIR/app_switch
-[ $current_color != '' ] 2>/dev/null && sed -i -e "s/HIGHLIGHT_BACKGROUND=.*/HIGHLIGHT_BACKGROUND=""$current_color""/g" $PDIR/screenshot_maim.sh
+[ $current_color != '' ] 2>/dev/null && sed -i -e "s/HIGHLIGHT_BACKGROUND=.*/HIGHLIGHT_BACKGROUND=""$current_color""/g" $PDIR/rofi_dmenu
 
 [ $# -lt 2 ] && echo "Enter 'light' or 'dark' as 2nd arg."
 [ $# -lt 1 ] && echo "Available options:

@@ -18,17 +18,22 @@ cdpath=($HOME/projects)
 export PATH="/home/$USER/wx/wxWidgets-3.1.3/lib/gtk3_so/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 # Aliases
 alias sudo='doas'
-alias yt='ytfzf'
+alias yt='ytfzf --subt'
 alias update='sudo pacman -Syu'
 alias inst='sudo pacman -S'
 alias hist='history 1 | cut -d " "  -f 6- | rofi -dmenu | xclip -selection clipboard'
 alias remove='sudo pacman -Rcns'
 alias search='pacman -Ss'
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
+alias ls='exa --icons'
 alias rm='rm -I'
 alias vim='nvim'
 alias v='nvim'
-alias ll='ls -alh --color=auto'
+#alias ll='ls -alh --color=auto'
+alias ll='exa -laF  --git --icons'
+alias mv="mv -iv"
+alias mkdir="mkdir -vp"
+alias cp="cp -rvi"
 alias d='dirs -v | head -10'
 alias 0='~0'
 alias 1='~1'
@@ -82,14 +87,6 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-## pyenv configs
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
 
 source ~/.config/zsh-configs/powerlevel10k/powerlevel10k.zsh-theme
 

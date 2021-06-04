@@ -100,85 +100,20 @@ scrolling:
 
 # Font configuration
 font:
-  # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    # family: SauceCodePro Nerd Font
-    # family: CodeNewRoman Nerd Font
-    # family: RobotoMono Nerd Font
-    # family: Hack
-    # family: JetBrains Mono
-    # family: UbuntuMono Nerd Font
-    # family: Monofur Nerd Font
-    # family: TerminessTTF Nerd Font
-    #family: FiraCode Nerd Font
-    family: MesloLGS NF 
-    #family: IBM Plex Mono
-
-    # The `style` can be specified to pick a specific face.
+    family: Source Code Pro
     style: Regular
 
-  # Bold font face
     bold: 
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    # family: SauceCodePro Nerd Font
-    # family: CodeNewRoman Nerd Font
-    # family: RobotoMono Nerd Font
-    # family: Hack
-    # family: JetBrains Mono
-    # family: UbuntuMono Nerd Font
-    # family: Monofur Nerd Font
-    # family: TerminessTTF Nerd Font
-    #family: FiraCode Nerd Font
-    family:  MesloLGS NF 
-    #family: IBM Plex Mono
-    # The `style` can be specified to pick a specific face.
+    family: Source Code Pro
     style: Bold
 
-  # Italic font face
   italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    # family: SauceCodePro Nerd Font Mono
-    # family: CodeNewRoman Nerd Font
-    # family: RobotoMono Nerd Font
-    # family: Hack
-    # family: JetBrains Mono
-    # family: UbuntuMono Nerd Font
-    # family: Monofuritalic Nerd Font Mono
-    # family: TerminessTTF Nerd Font
-    family:  MesloLGS NF  
-    #family: IBM Plex Mono
-    # The `style` can be specified to pick a specific face.
+    family: Source Code Pro
     style: Italic
 
-  # Bold italic font face
   bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    # family: SauceCodePro Nerd Font Mono
-    # family: CodeNewRoman Nerd Font
-    # family: RobotoMono Nerd Font
-    # family: Hack
-    # family: JetBrains Mono
-    # family: UbuntuMono Nerd Font
-    # family: Monofuritalic Nerd Font Mono
-    # family: TerminessTTF Nerd Font
-    family:  MesloLGS NF   
-    #family: IBM Plex Mono
-    # The `style` can be specified to pick a specific face.
+    family: Source Code Pro
     style: Bold Italic
 
   # Point size
@@ -217,6 +152,46 @@ font:
 #draw_bold_text_with_bright_colors: true
 
 schemes:
+    # Colors
+  # Default colors
+  nightfly: &nightfly
+    primary:
+        background:        '#011627'
+        foreground:        '#acb4c2'
+        bright_foreground: '#eeeeee'
+
+    # Cursor colors
+    cursor:
+        text:   '#080808'
+        cursor: '#9ca1aa'
+
+    # Selection colors
+    selection:
+        text:       '#080808'
+        background: '#b2ceee'
+
+    # Normal colors
+    normal:
+        black:   '#1d3b53'
+        red:     '#fc514e'
+        green:   '#a1cd5e'
+        yellow:  '#e3d18a'
+        blue:    '#82aaff'
+        magenta: '#c792ea'
+        cyan:    '#7fdbca'
+        white:   '#a1aab8'
+
+    # Bright colors
+    bright:
+        black:   '#7c8f8f'
+        red:     '#ff5874'
+        green:   '#21c7a8'
+        yellow:  '#ecc48d'
+        blue:    '#82aaff'
+        magenta: '#ae81ff'
+        cyan:    '#7fdbca'
+        white:   '#d6deeb'
+
   afterglow: &afterglow
     primary:
       background: '0x2c2c2c'
@@ -1439,7 +1414,7 @@ schemes:
       cyan:    '0x00ffff'
       white:   '0xffffff'
 
-colors: *gruvbox_material
+colors: *afterglow
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once

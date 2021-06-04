@@ -4,7 +4,7 @@ super + shift + m
 super + shift + n
 	pcmanfm
 super + shift + b
-    alacritty -e nnn -e
+    alacritty -e nnn 
 
 
 # VOLUME
@@ -39,7 +39,7 @@ super + F2
 
 # Application switch
 alt + Tab
-    "$HOME"/.config/sxhkd/scripts/app_switch
+    "$HOME"/.config/sxhkd/scripts/rofi_dmenu "window"
 
 # Scratchpad Terminal script 
 #super + u
@@ -51,7 +51,7 @@ super + Return
 
 # program launcher
 super + d
-    "$HOME"/.config/sxhkd/scripts/menu
+    "$HOME"/.config/sxhkd/scripts/rofi_dmenu 'drun -display-drun Applications : -drun-display-format \{name\}'
 	#dmenu_run -b -sb darkred
 
 # make sxhkd reload its configuration files:
@@ -95,7 +95,7 @@ super + g
 
 # set the window state
 super + {t,shift + t,s,f}
-	bspc node -t {tiled & "$HOME"/.config/sxhkd/scripts/term_padding ,pseudo_tiled,floating,fullscreen & "$HOME"/.config/sxhkd/scripts/term_padding }
+	bspc node -t {tiled; "$HOME"/.config/sxhkd/scripts/term_padding ,pseudo_tiled,floating,fullscreen; "$HOME"/.config/sxhkd/scripts/term_padding }
 	#bspc node -t {tiled ,pseudo_tiled,floating,fullscreen}
     
 

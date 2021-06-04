@@ -42,3 +42,8 @@ udiskie &
 [ ! -z "$(pgrep -x stalonetray )" ] && killall stalonetray 
 sleep 5
 stalonetray &
+
+[ ! -z "$(pgrep -x conky )" ] && killall conky 
+conky &
+
+xsetroot -cursor_name left_ptr

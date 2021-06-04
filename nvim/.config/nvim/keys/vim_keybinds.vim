@@ -41,8 +41,10 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>d "_d
+nnoremap <Leader>o o<Esc>0D
+nnoremap <Leader>O O<Esc>0D
 
-nnoremap <C-u> :IndentLinesToggle<CR> 
 nnoremap <C-c> :VimwikiAll2HTML <CR> 
 nnoremap <C-H> <C-W>5<
 nnoremap <C-J> :resize +5<CR> 
