@@ -44,7 +44,7 @@ rofi -no-lazy-grab -show $1 \
 -xoffset 0 -yoffset 46 \
 -location 1 \
 -columns 10 \
--show-icons -icon-theme "Papirus" \
+-show-icons -icon-theme "Numix Circle" \
 -font "Fantasque Sans Mono 10" \
 -color-enabled true \
 -color-window "$BACKGROUND,$BORDER,$SEPARATOR" \

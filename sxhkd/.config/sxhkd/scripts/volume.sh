@@ -20,20 +20,20 @@ function send_notification {
     # https://en.wikipedia.org/wiki/Box-drawing_character
 #bar=$(seq -s "─" $(($volume/5)) | sed 's/[0-9]//g')
 if [ "$volume" = "0" ]; then
-        icon_name="/usr/share/icons/Faba/48x48/notifications/notification-audio-volume-muted.svg"
+        icon_name="/usr/share/icons/Paper/48x48/notifications/notification-audio-volume-muted.svg"
 $DIR/notify-send.sh "$volume""      " -i "$icon_name" -t 2000 -h int:value:"$volume" -h string:synchronous:"─" --replace=555
     else
 	if [  "$volume" -lt "10" ]; then
-	     icon_name="/usr/share/icons/Faba/48x48/notifications/notification-audio-volume-low.svg"
+	     icon_name="/usr/share/icons/Paper/48x48/notifications/notification-audio-volume-low.svg"
 $DIR/notify-send.sh "$volume""     " -i "$icon_name" --replace=555 -t 2000
     else
         if [ "$volume" -lt "30" ]; then
-            icon_name="/usr/share/icons/Faba/48x48/notifications/notification-audio-volume-low.svg"
+            icon_name="/usr/share/icons/Paper/48x48/notifications/notification-audio-volume-low.svg"
         else
             if [ "$volume" -lt "70" ]; then
-                icon_name="/usr/share/icons/Faba/48x48/notifications/notification-audio-volume-medium.svg"
+                icon_name="/usr/share/icons/Paper/48x48/notifications/notification-audio-volume-medium.svg"
             else
-                icon_name="/usr/share/icons/Faba/48x48/notifications/notification-audio-volume-high.svg"
+                icon_name="/usr/share/icons/Paper/48x48/notifications/notification-audio-volume-high.svg"
             fi
         fi
     fi
@@ -62,7 +62,7 @@ case $1 in
 	amixer -D pulse set Master 1+ toggle > /dev/null
 	if is_mute ; then
     DIR=`dirname "$0"`
-    $DIR/notify-send.sh -i "/usr/share/icons/Faba/48x48/notifications/notification-audio-volume-muted.svg" --replace=555 -u normal "Mute" -t 2000
+    $DIR/notify-send.sh -i "/usr/share/icons/Paper/48x48/notifications/notification-audio-volume-muted.svg" --replace=555 -u normal "Mute" -t 2000
 	else
 	    send_notification
 	fi

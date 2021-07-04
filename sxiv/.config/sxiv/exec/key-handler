@@ -4,6 +4,8 @@ do
         case "$1" in
         "w")
                 "$HOME"/projects/bash_scripts/sxiv_wall.sh "$file" ;;
+        "d")
+                mv "$file"  /home/saul/.local/share/Trash/files/ ;;
         esac
 done
 

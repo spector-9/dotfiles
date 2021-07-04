@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-50+20"
+    geometry = "380x5-50+20"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -54,7 +54,7 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 8
+    padding = 4
 
     # Horizontal padding.
     horizontal_padding = 8
@@ -64,7 +64,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#aaaaaa"
+    frame_color = "#27a0e1"
 
     # Define a color for the separator.
     # possible values are:
@@ -86,7 +86,7 @@
 
     ### Text ###
 
-    font = IBM Plex Mono 12 
+    font = DejaVu Sans Mono Book 14 
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -130,7 +130,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    alignment = center
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
@@ -222,7 +222,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 5
+    corner_radius = 2
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -299,8 +299,8 @@
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
+    background = "#1e1e1e"
+    foreground = "#27a0e1"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon

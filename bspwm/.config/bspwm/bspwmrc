@@ -7,6 +7,7 @@
 # Scratch term
 #st -c scratchterm &
 bspc rule -a scratchterm sticky=on state=floating
+bspc rule -a Zathura state=tiled 
 #bspc rule -a scratchterm sticky=on state=floating hidden=on
 
 #### WORKSPACES AND BORDERS ####

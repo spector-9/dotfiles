@@ -47,3 +47,5 @@ stalonetray &
 conky &
 
 xsetroot -cursor_name left_ptr
+
+pulseeffects --gapplication-service &

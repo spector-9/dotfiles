@@ -12,38 +12,27 @@ Copy to clipboard
 Diagram"
 
 
-fullscreen (){
-    import -quality 100 +compress -window root "$directory""$file_name"".png"
-    #maim -m 1 "$directory""$file_name"".png"
-    [ -f "$directory""$file_name".png ] && notify-send -t 1200 "Screenshot saved" -i "$directory""$file_name".png
-}
-
-window (){
-    maim -s -m 1 "$directory""$file_name"".png"
+normal (){
+    maim $1 -m 1 "$directory""$file_name"".png"
     [ -f "$directory""$file_name".png ] && notify-send -t 1200 "Screenshot saved" -i "$directory""$file_name".png
 }
 
 window_dia (){
-    file_name=$(rofi -dmenu -p 'File name' -lines 1 -width 530 -xoffset 00 -yoffset -450 -bw 0 -color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND")
+    file_name=$($HOME/.config/sxhkd/scripts/rofi_dmenu "-dmenu -l 1 -p File Name")
     maim -s -m 1 "$HOME/vimwiki/diagrams/""$file_name"".png"
     [ -f "$HOME"/vimwiki/diagrams/"$file_name".png ] && notify-send -t 1200 "Screenshot saved" -i "$HOME"/vimwiki/diagrams/"$file_name".png
 }
 
-fullscreen_clipboard (){
-    maim -m 1 | xclip -selection clipboard -t image/png 
-    notify-send -t 1200  "Copied to clipboard."
-}
-
-window_clipboard (){
-    maim -s -m 1 | xclip -selection clipboard -t image/png
+clipboard (){
+    maim $1 -m 1 | xclip -selection clipboard -t image/png 
     notify-send -t 1200  "Copied to clipboard."
 }
 
 function_select_clipboard (){
     chosen=$(echo "$first_prompt"| head -n 2 | $HOME/.config/sxhkd/scripts/rofi_dmenu "-dmenu -l 4 -p Screenshot Area")
     case $chosen in
-        Fullscreen) fullscreen_clipboard;;
-        "Select a window or region") window_clipboard;;
+        "Fullscreen") clipboard;;
+        "Select a window or region") clipboard '-s';;
     esac
 }
 
@@ -56,8 +45,8 @@ function_select (){
     chosen=$(echo "$first_prompt" | $HOME/.config/sxhkd/scripts/rofi_dmenu "-dmenu -l 4 -p Screenshot Area")
 
     case $chosen in
-        Fullscreen) fullscreen;;
-        "Select a window or region") window;;
+        Fullscreen) normal;;
+        "Select a window or region") normal "-s";;
         "Copy to clipboard") function_select_clipboard;;
         "Diagram") window_dia;;
     esac

@@ -9,9 +9,9 @@ fi
 # history for vim binds
 setopt  auto_cd  
 # Auto Pushd
-DIRSTACKSIZE=10
-setopt autopushd
-setopt pushdignoredups
+#DIRSTACKSIZE=10
+#setopt autopushd
+#setopt pushdignoredups
 # CD Path
 cdpath=($HOME/projects)
 # Path Variable
@@ -34,24 +34,25 @@ alias ll='exa -laF  --git --icons'
 alias mv="mv -iv"
 alias mkdir="mkdir -vp"
 alias cp="cp -rvi"
-alias d='dirs -v | head -10'
-alias 0='~0'
-alias 1='~1'
-alias 2='~2'
-alias 3='~3'
-alias 4='~4'
-alias 5='~5'
-alias 6='~6'
-alias 7='~7'
-alias 8='~8'
-alias 9='~9'
+alias d='cdr -l'
+alias 0='cdr 0'
+alias 1='cdr 1'
+alias 2='cdr 2'
+alias 3='cdr 3'
+alias 4='cdr 4'
+alias 5='cdr 5'
+alias 6='cdr 6'
+alias 7='cdr 7'
+alias 8='cdr 8'
+alias 9='cdr 9'
 alias tb='taskbook'
 # Set up the prompt
 
 autoload -Uz promptinit
 promptinit
 prompt adam1
-
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
 setopt histignorealldups sharehistory
 
 # Use emacs(-e) or vi(-v) keybindings 
@@ -68,7 +69,7 @@ HISTFILE=~/.config/.zsh_history
 # Use modern completion system
 autoload -Uz compinit
 compinit
-
+zstyle ':completion:*:*:cdr:*:*' menu selection
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
