@@ -1,4 +1,4 @@
-let g:vimwiki_global_ext = 0
+Let g:vimwiki_global_ext = 0
 filetype plugin on
 set spell spelllang=en_us
 set dictionary=~/.config/nvim/american-english

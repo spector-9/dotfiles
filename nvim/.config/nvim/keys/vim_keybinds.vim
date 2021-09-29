@@ -19,6 +19,14 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+"Undo break Points
+inoremap . .<c-g>u
+inoremap , ,<c-g>u
+inoremap ? ?<c-g>u
+inoremap ! !<c-g>u
+
+" Make Shift Y copy from the cursor to the end of the line.
+nnoremap Y y$
 " Exit terminal
 tnoremap <C-n> <C-\><C-n>
 " gd - go to definition of word under cursor
@@ -46,6 +54,7 @@ nnoremap <Leader>o o<Esc>0D
 nnoremap <Leader>O O<Esc>0D
 
 nnoremap <C-c> :VimwikiAll2HTML <CR> 
+
 nnoremap <C-H> <C-W>5<
 nnoremap <C-J> :resize +5<CR> 
 nnoremap <C-L> <C-W>5>    
