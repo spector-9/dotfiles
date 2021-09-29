@@ -39,13 +39,19 @@ dunst &
 [ ! -z "$(pgrep -x udiskie )" ] && killall udiskie 
 udiskie &
 
-[ ! -z "$(pgrep -x stalonetray )" ] && killall stalonetray 
-sleep 5
-stalonetray &
+[ ! -z "$(pgrep -x pipewire )" ] && killall pipewire 
+pipewire &
 
-[ ! -z "$(pgrep -x conky )" ] && killall conky 
-conky &
+[ ! -z "$(pgrep -x pipewire-media-session )" ] && killall pipewire-media-session 
+pipewire-media-session &
+
+[ ! -z "$(pgrep -x pipewire-pulse )" ] && killall pipewire-pulse
+pipewire-pulse &
+#[ ! -z "$(pgrep -x conky )" ] && killall conky 
+#conky &
 
 xsetroot -cursor_name left_ptr
 
-pulseeffects --gapplication-service &
+#pulseeffects --gapplication-service &
+xset r rate 230 40 &
+
