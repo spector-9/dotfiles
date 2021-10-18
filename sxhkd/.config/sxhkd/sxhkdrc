@@ -5,6 +5,8 @@ super + shift + n
 	pcmanfm
 super + shift + b
     alacritty -e nnn 
+super + shift + t
+    alacritty -e tmux attach-session -t master
 
 
 # VOLUME

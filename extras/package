@@ -44,3 +44,5 @@ htop
 pipewire-alsa
 pipewire-pulse
 pamixer
+xdo
+xprop

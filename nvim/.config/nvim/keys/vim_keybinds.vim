@@ -75,3 +75,19 @@ imap <C-k> <Plug>(coc-snippets-expand-jump)
 " Keybind to convert md file to pdf
 nnoremap <F2> :! "$HOME"/projects/bash_scripts/mdtopdf.sh %<Return>
 nnoremap <F3> :! "$HOME"/projects/bash_scripts/mdtopdf.sh % open<Return>
+
+
+" Write buffer through sudo
+cnoreabbrev w!! w !pkexec tee % >/dev/null
+" Change the current directory to the directory of the file in buffer
+nmap <silent> <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+function! Refactor()
+    call inputsave()
+    let @z=input("What do you want to rename '" . @z . "' to? ")
+    call inputrestore()
+endfunction
+
+" Locally (local to block) rename a variable
+nmap <Leader>rf "zyiw:call Refactor()<cr>mx:silent! norm gd<cr>[{V%:s/<C-R>//<c-r>z/g<cr>`x
+nmap <Leader>rF "zyiw:call Refactor()<cr>mx:silent! norm gd<cr>[{V%:s/<C-R>//<c-r>z/gc<cr>`x

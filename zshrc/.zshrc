@@ -5,32 +5,30 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 # history for vim binds
 setopt  auto_cd  
 # Auto Pushd
-#DIRSTACKSIZE=10
+DIRSTACKSIZE=10
 #setopt autopushd
 #setopt pushdignoredups
 # CD Path
-cdpath=($HOME/projects)
+cdpath=($HOME/Media)
 # Path Variable
 export PATH="/home/$USER/wx/wxWidgets-3.1.3/lib/gtk3_so/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 # Aliases
-alias sudo='doas'
 alias yt='ytfzf --subt'
 alias update='sudo pacman -Syu'
 alias inst='sudo pacman -S'
 alias hist='history 1 | cut -d " "  -f 6- | rofi -dmenu | xclip -selection clipboard'
 alias remove='sudo pacman -Rcns'
 alias search='pacman -Ss'
-#alias ls='ls --color=auto'
-alias ls='exa --icons'
+alias ls='ls --color=auto'
+#alias ls='exa --icons'
 alias rm='rm -I'
 alias vim='nvim'
 alias v='nvim'
-#alias ll='ls -alh --color=auto'
-alias ll='exa -laF  --git --icons'
+alias ll='ls -alh --color=auto'
+#alias ll='exa -laF  --git --icons'
 alias mv="mv -iv"
 alias mkdir="mkdir -vp"
 alias cp="cp -rvi"
@@ -46,6 +44,7 @@ alias 7='cdr 7'
 alias 8='cdr 8'
 alias 9='cdr 9'
 alias tb='taskbook'
+alias o='xdg-open'
 # Set up the prompt
 
 autoload -Uz promptinit
@@ -94,3 +93,5 @@ source ~/.config/zsh-configs/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.config/zsh-configs/.p10k.zsh ]] || source ~/.config/zsh-configs/.p10k.zsh
 source ~/.config/zsh-configs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source /home/saul/.config/broot/launcher/bash/br
