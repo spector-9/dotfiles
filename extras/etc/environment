@@ -5,4 +5,5 @@ EDITOR=nvim
 BROWSER=waterfox
 NNN_PLUG='v:imgview;p:preview-tabbed'
 NNN_FIFO=/tmp/nnn.fifo
-
+NNN_TRASH=1
+QT_STYLE_OVERRIDE=kvantum
