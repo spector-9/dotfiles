@@ -1414,7 +1414,7 @@ schemes:
       cyan:    '0x00ffff'
       white:   '0xffffff'
 
-colors: *afterglow
+colors: *gruvbox_dark
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once

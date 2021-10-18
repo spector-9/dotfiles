@@ -63,18 +63,23 @@ Plug 'vimwiki/vimwiki'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Yggdroot/indentLine'
 Plug 'rrethy/vim-hexokinase'
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 Plug 'honza/vim-snippets'
 Plug 'easymotion/vim-easymotion'
 Plug 'justinmk/vim-sneak'
+Plug 'sainnhe/gruvbox-material'
+Plug 'michal-h21/vim-zettel'
 
 call plug#end()
 
-let g:gruvbox_italic=1  "Enabling italics
-colorscheme gruvbox
+"let g:gruvbox_italic=1  "Enabling italics
+"let g:gruvbox_contrast_dark='soft'
+let g:gruvbox_material_italic=1  "Enabling italics
+let g:gruvbox_material_background='soft'
+colorscheme gruvbox-material
 set background=dark
-" autocmd vimenter * colorscheme gruvbox
-let g:gruvbox_contrast_dark='hard'
+
+
 
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
@@ -84,6 +89,7 @@ let g:vimwiki_list = [{'path': '$HOME/vimwiki',
   \ 'path_html': '$HOME/vimwiki_html',
   \ 'syntax': 'markdown',
   \ 'ext': '.md',
+  \ 'auto_tags':1,
   \ 'custom_wiki2html': '$HOME/custom_wiki.sh'}]
 
 
