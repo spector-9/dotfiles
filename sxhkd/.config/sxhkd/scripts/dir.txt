@@ -1,0 +1,6 @@
+~/.config
+~/Media/projects
+~/Media/Pictures
+~/Media/Videos
+~/Media/Documents
+~/Downloads

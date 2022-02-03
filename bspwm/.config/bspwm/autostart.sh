@@ -18,8 +18,11 @@ picom --experimental-backends &
 [ ! -z "$(pgrep -x mpd)" ] && killall mpd 
 mpd &
 
-[ ! -z "$(pgrep -x polkit-gnome-authentication-agent-1)" ] && killall polkit-gnome-authentication-agent-1 
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+[ ! -z "$(pgrep -x xss-lock)" ] && killall xss-lock 
+xss-lock -- betterlockscreen -l &
+
+[ ! -z "$(pgrep -x polkit-mate-authentication-agent-1)" ] && killall polkit-mate-authentication-agent-1 
+/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 
 [ ! -z "$(pgrep -x xfce4-power-manager )" ] && killall xfce4-power-manager 
 xfce4-power-manager &
@@ -47,8 +50,9 @@ pipewire-media-session &
 
 [ ! -z "$(pgrep -x pipewire-pulse )" ] && killall pipewire-pulse
 pipewire-pulse &
-#[ ! -z "$(pgrep -x conky )" ] && killall conky 
-#conky &
+
+[ ! -z "$(pgrep -f calcursenotification)" ] && kill $(pgrep -f calcursenotification)
+calcursenotification 15 &
 
 xsetroot -cursor_name left_ptr
 

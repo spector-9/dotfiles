@@ -1,8 +1,6 @@
 # Application Summons
-super + shift + m
-	librewolf
-super + shift + n
-	pcmanfm
+super + shift + {m, n}
+	{librewolf, pcmanfm}
 super + shift + b
     alacritty -e nnn 
 super + shift + t
@@ -29,6 +27,20 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     brightnessctl set 25-
 
+# dunst controls
+alt + space
+    dunstctl close
+ctrl + shift + alt + space
+    dunstctl close-all
+ctrl + grave
+    dunstctl history-pop
+ctrl + shift + period
+    dunstctl context
+Pause
+    ([ $(dunstctl is-paused) = 'false' ] && notify-send "Notfications Hold." && sleep 1 && dunstctl close)\
+    || notify-send "Notfications Allowed.";\
+    dunstctl set-paused toggle
+
 # wm independent hotkeys
 
 # Screenshot script
@@ -39,13 +51,13 @@ super  + F1
 super + F2
     $BROWSER $HOME/vimwiki_html/index.html
 
-# Application switch
-alt + Tab
-    "$HOME"/.config/sxhkd/scripts/rofi_dmenu "window"
-
- Scratchpad Terminal script 
+# Scratchpad Terminal script 
 super + u
     "$HOME"/.config/sxhkd/scripts/scratchterm.sh dropdown
+
+# Folder shortcuts
+super + shift + d
+    "$HOME"/.config/sxhkd/scripts/quickjump.sh
 
 
 # terminal emulator

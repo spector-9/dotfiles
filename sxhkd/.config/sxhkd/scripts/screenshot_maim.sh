@@ -46,7 +46,7 @@ function_select (){
     chosen=$(echo "$first_prompt" | $rofi_command -l 4 -p "Screenshot Area: ")
 
     case $chosen in
-        Fullscreen) normal;;
+        "Fullscreen") normal "-q";;
         "Select a window or region") normal "-s";;
         "Copy to clipboard") function_select_clipboard;;
         "Diagram") window_dia;;

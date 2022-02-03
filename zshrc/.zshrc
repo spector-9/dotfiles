@@ -19,7 +19,6 @@ export PATH="/home/$USER/wx/wxWidgets-3.1.3/lib/gtk3_so/bin:$HOME/.local/bin:$HO
 alias yt='ytfzf --subt'
 alias update='sudo pacman -Syu'
 alias inst='sudo pacman -S'
-alias hist='history 1 | cut -d " "  -f 6- | rofi -dmenu | xclip -selection clipboard'
 alias remove='sudo pacman -Rcns'
 alias search='pacman -Ss'
 alias ls='ls --color=auto'
@@ -43,8 +42,16 @@ alias 6='cdr 6'
 alias 7='cdr 7'
 alias 8='cdr 8'
 alias 9='cdr 9'
+alias 9='cdr 10'
 alias tb='taskbook'
 alias o='xdg-open'
+downvid() {
+    quality="$1"
+    shift
+    for i in "$@"; do
+        yt-dlp --embed-subs --sub-lang en --write-auto-sub -f "bestvideo[height<=$quality]+bestaudio/best[height<=$quality]" "$i"
+    done
+}
 # Set up the prompt
 
 autoload -Uz promptinit
@@ -93,5 +100,3 @@ source ~/.config/zsh-configs/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.config/zsh-configs/.p10k.zsh ]] || source ~/.config/zsh-configs/.p10k.zsh
 source ~/.config/zsh-configs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-source /home/saul/.config/broot/launcher/bash/br

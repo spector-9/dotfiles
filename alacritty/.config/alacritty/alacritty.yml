@@ -101,7 +101,7 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: Source Code Pro
+    family: Sans-serif
     style: Regular
 
     bold: 
