@@ -1,3 +1,5 @@
+lighdm
+lightdm-webkit2-greeter
 bspwm
 sxhkd
 polybar
@@ -46,3 +48,7 @@ pipewire-pulse
 pamixer
 xdo
 xprop
+npm
+python-pynvim
+base-devel
+gitui

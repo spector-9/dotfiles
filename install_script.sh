@@ -4,6 +4,10 @@
 if [ "$1" = "install" ] ; then
     sudo pacman -Syu 
     sudo pacman -S $(<$(pwd)/extras/package)
+    cd /tmp
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si
 fi
 
 
