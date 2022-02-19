@@ -30,8 +30,8 @@ xfce4-power-manager &
 [ ! -z "$(pgrep -x nm-applet )" ] && killall nm-applet 
 nm-applet &
 
-[ ! -z "$(pgrep -x blueman-applet )" ] && killall blueman-applet 
-blueman-applet &
+#[ ! -z "$(pgrep -x blueman-applet )" ] && killall blueman-applet 
+#blueman-applet &
 
 [ ! -z "$(pgrep -x pasystray )" ] && killall pasystray 
 pasystray -m 100 &
@@ -42,19 +42,19 @@ dunst &
 [ ! -z "$(pgrep -x udiskie )" ] && killall udiskie 
 udiskie &
 
-[ ! -z "$(pgrep -x pipewire )" ] && killall pipewire 
-pipewire &
+#[ ! -z "$(pgrep -x wireplumber )" ] && killall wireplumber 
+#wireplumber &
+#
+#[ ! -z "$(pgrep -x pipewire )" ] && killall pipewire 
+#pipewire &
+#
+#[ ! -z "$(pgrep -x pipewire-pulse )" ] && killall pipewire-pulse
+#pipewire-pulse &
 
-[ ! -z "$(pgrep -x pipewire-media-session )" ] && killall pipewire-media-session 
-pipewire-media-session &
+#[ ! -z "$(pgrep -f calcursenotification)" ] && kill $(pgrep -f calcursenotification)
+#calcursenotification 15 &
 
-[ ! -z "$(pgrep -x pipewire-pulse )" ] && killall pipewire-pulse
-pipewire-pulse &
-
-[ ! -z "$(pgrep -f calcursenotification)" ] && kill $(pgrep -f calcursenotification)
-calcursenotification 15 &
-
-xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr &
 
 #pulseeffects --gapplication-service &
 xset r rate 230 40 &

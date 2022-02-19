@@ -38,13 +38,10 @@ adapta-gtk-theme
 nerd-fonts-noto-sans-mono
 xorg
 mpv
-pavucontrol
-alsa-lib
-alsa-plugins
-alsa-utils
 brightnessctl
 mpv
 htop
+pavucontrol
 pipewire-alsa
 pipewire-pulse
 wireplumber
@@ -66,3 +63,4 @@ gvfs-smb
 mtpfs
 tmux
 inetutils
+syncthing
