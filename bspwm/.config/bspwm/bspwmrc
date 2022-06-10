@@ -1,7 +1,9 @@
 #! /bin/sh
 
 
-"$HOME"/.config/bspwm/autostart.sh &
+"$HOME"/.config/bspwm/down &
+sleep 1
+"$HOME"/.config/bspwm/up &
 
 #cbatticon -u 10 -x "notify-send $(cat /sys/class/power_supply/BAT1/capacity)" &
 # Scratch term

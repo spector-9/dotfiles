@@ -1,14 +1,5 @@
-/*
- *
- * Author  : Aditya Shakya
- * Mail    : adi1090x@gmail.com
- * Github  : @adi1090x
- * Twitter : @adi1090x
- *
- */
-
 configuration {
-    font:						    "Fantasque Sans Mono 14";
+    font:						    "Iosevka Nerd Font 15";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     display-drun: 					"Applications: ";
@@ -24,7 +15,7 @@ window {
     background-color:               @bg;
     text-color:                     @fg;
 	border:							0px 0px 0px 0px;
-	border-color:					@ac;
+	border-color:					@acolor;
     border-radius:                  0px;
 	width:							1900px;
     location:                       center;
@@ -41,7 +32,7 @@ prompt {
 }
 
 entry {
-    background-color:               @al;
+    background-color:               @bg;
     text-color:                     @fg;
     placeholder-color:              @fg;
     expand:                         true;
@@ -64,7 +55,7 @@ inputbar {
 }
 
 listview {
-    background-color:               @al;
+    background-color:               @bgb;
     padding:                        0px;
     columns:                        12;
     lines:                          1;
@@ -75,7 +66,7 @@ listview {
 }
 
 mainbox {
-    background-color:               @al;
+    background-color:               @bga;
 	border:							0px;
     border-radius:                  0px;
 	border-color:					@ac;
@@ -85,7 +76,7 @@ mainbox {
 }
 
 element {
-    background-color:               @al;
+    background-color:               @bgb;
     text-color:                     @fg;
     orientation:                    horizontal;
     border-radius:                  0px;
@@ -107,7 +98,7 @@ element-text {
 
 element selected {
     background-color:               @se;
-    text-color:                     @bg;
+    text-color:                     #FFFFFFFF;
 	border:							0px 0px 0px 0px;
     border-radius:                  0px;
     border-color:                  	@ac;

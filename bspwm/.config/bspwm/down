@@ -1,0 +1,31 @@
+#! /bin/sh
+
+# System
+pkill sxhkd
+pkill polybar
+pkill dunst
+pkill parcellite
+pkill udiskie
+pkill xss-lock
+pkill /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
+pkill picom
+
+# Systray
+pkill pasystray
+pkill nm-applet
+pkill xfce4-power-manager
+#pkill blueman-applet
+pkill  parcellite 
+
+# Audio Daemons
+pkill mpd
+#pkill pipewire
+#pkill wireplumber
+#pkill pipewire-pulse
+
+# Extras
+#pkill calcursenotification
+
+
+
+

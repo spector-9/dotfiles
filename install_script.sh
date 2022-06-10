@@ -21,8 +21,7 @@ if [ "$1" = "link" ] ; then
     stow -v $(ls -A -I "README.md" -I "extras" -I ".git*" -I "install_script.sh")
 fi
 
-[ "$1" = "copy" ] && printf "Copying the environment var file.\n" && sudo cat $(pwd)/extras/etc/environment >> /etc/environment \
-                  && printf "Copying keyboard, touchpad & monitor configs.\n" && sudo cp -vi  $(pwd)/extras/etc/X11/xorg.conf.d/* /etc/X11/xorg.conf.d/
+[ "$1" = "copy" ] && printf "Copying extra files.\n" && sudo cp -rvi $(pwd)/extras/etc/* /etc/ 
 
 [ $# -lt 1 ] && printf "Basic options:\ninstall - Install the necessary applications
 service - Enables the required services.

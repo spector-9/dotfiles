@@ -32,7 +32,7 @@ case $chosen in
     "$shutdown")
 		ans=$(confirm_exit &)
 		if [ "$ans" = "yes" ] || [ "$ans" = "YES" ] || [ "$ans" = "y" ] || [ "$ans" = "Y" ]; then
-            sudo poweroff
+            poweroff
 		elif [ "$ans" = "no" ] || [ "$ans" = "NO" ] || [ "$ans" = "n" ] || [ "$ans" = "N" ]; then
 			exit 0
         else
@@ -50,6 +50,7 @@ case $chosen in
         fi
         ;;
     "$lock")
+		ans=$(confirm_exit &)
 		if [ -f /usr/bin/betterlockscreen ]; then
 			betterlockscreen -l
 		elif [ -f /usr/bin/i3lock ]; then
@@ -67,7 +68,6 @@ case $chosen in
         fi
         ;;
     "$logout")
-		ans=$(confirm_exit &)
 		if [ "$ans" = "yes" ] || [ "$ans" = "YES" ] || [ "$ans" = "y" ] || [ "$ans" = "Y" ]; then
 			if [ "$DESKTOP_SESSION" = "Openbox" ]; then
 				openbox --exit

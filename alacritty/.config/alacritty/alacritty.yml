@@ -33,8 +33,8 @@ scrolling:
 #
 # This setting defines the width of a tab in cells.
 #
-# Some applications, like Emacs, rely on knowing about the width of a tab.
-# To prevent unexpected behavior in these applications, it's also required to
+# 0 applications, like Emacs, rely on knowing about the width of a tab.
+# 0 prevent unexpected behavior in these applications, it's also required to
 # change the `it` value in terminfo when altering this setting.
 #tabspaces: 8
 
