@@ -3,3 +3,4 @@ mpv/.config/mpv/playlists/
 zshrc/.config/zsh/.chpwd-recent-dirs
 zshrc/.config/zsh/.zcompdump
 newsboat/.config/newsboat/urls
+nvim/.config/nvim/plugin/packer_compiled.lua
