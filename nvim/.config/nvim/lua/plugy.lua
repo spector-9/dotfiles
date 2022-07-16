@@ -29,8 +29,31 @@ return require('packer').startup(function()
     use 'hrsh7th/nvim-cmp'
     use 'SirVer/ultisnips'
     use 'quangnguyen30192/cmp-nvim-ultisnips'
+    use {
+        'vimwiki/vimwiki',
+        config = function()
+            vim.g.vimwiki_list = {
+                {
+                    path = '~/Media/Documents/vimwiki/',
+                    syntax = 'markdown',
+                    ext = '.md'
+                }
+            }
 
 
+            vim.g.vimwiki_list = {
+                {
+                    path = '~/Media/Documents/vimwiki/',
+                    path_html = '~/Media/Documents/vimwiki/html',
+                    syntax = 'markdown',
+                    ext = '.md',
+                    custom_wiki2html = '~/custom_wiki.sh'
+                }
+            }
 
+            vim.g.vimwiki_global_ext = 0
+
+        end
+    }
 end)
 

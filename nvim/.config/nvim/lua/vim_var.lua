@@ -1,7 +1,7 @@
 HOME = os.getenv("HOME")
 vim.g.mapleader = " "
-vim.opt.iskeyword = {'+', '=', '-'}
-
+vim.opt.iskeyword = {'+', '=', '-', '.', ':', '-'}
+vim.g.gruvbox_italic = 1  --Enabling italics
 --set updatetime=50
 vim.cmd [[
     syntax on
@@ -9,6 +9,7 @@ vim.cmd [[
     colorscheme gruvbox-material
 ]]
 
+vim.g.background = dark
 vim.o.dictionary = HOME .. "/.config/nvim/american-english"
 vim.o.splitbelow = true      
 vim.o.splitright = true
