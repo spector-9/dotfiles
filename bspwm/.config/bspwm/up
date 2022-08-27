@@ -1,5 +1,4 @@
 #! /bin/sh
-
 xset r rate 230 40 &
 xsetroot -cursor_name left_ptr &
 nitrogen --restore &
@@ -8,34 +7,29 @@ nitrogen --restore &
 #while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 #polybar -c ~/.config/polybar/config.ini main &
 
-#System
-[ -x "$(command -v sxhkd)" ] && sxhkd &
-[ -x "$(command -v parcellite)" ] && parcellite -n &
-[ -x "$(command -v polybar)" ] && polybar -c ~/.config/polybar/config.ini main &
-[ -x "$(command -v picom)" ] && picom --experimental-backends &
-#xss-lock -- betterlockscreen -l &
-[ -x "$(command -v /usr/lib/mate-polkit/polkit-mate-authentication-agent-1)" ] && /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
-[ -x "$(command -v dunst)" ] && dunst &
-[ -x "$(command -v udiskie)" ] && udiskie &
-
 # Audio Daemons
 [ -x "$(command -v mpd)" ] && mpd &
 #[ -x "$(command -v pipewire)" ] && pipewire &
 #[ -x "$(command -v wireplumber)" ] && wireplumber &
 #[ -x "$(command -v pipewire-pulse)" ] && pipewire-pulse &
 
-
-
 #Systray
-[ -x "$(command -v pasystray)" ] && pasystray -m 100 &
 #[ -x "$(command -v blueman-applet)" ] && blueman-applet &
 [ -x "$(command -v xfce4-power-manager)" ] && xfce4-power-manager &
 [ -x "$(command -v nm-applet)" ] && nm-applet &
 
+#System
+[ -x "$(command -v sxhkd)" ] && sxhkd &
+[ -x "$(command -v parcellite)" ] && parcellite -n &
+[ -x "$(command -v picom)" ] && picom --experimental-backends &
+#xss-lock -- betterlockscreen -l &
+[ -x "$(command -v /usr/lib/mate-polkit/polkit-mate-authentication-agent-1)" ] && /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
+[ -x "$(command -v dunst)" ] && dunst &
+[ -x "$(command -v udiskie)" ] && udiskie &
+[ -x "$(command -v polybar)" ] && polybar -c ~/.config/polybar/config.ini main &
 
 #[ ! -z "$(pgrep -f calcursenotification)" ] && kill $(pgrep -f calcursenotification)
 #calcursenotification 15 &
-
-
 #pulseeffects --gapplication-service &
+
 

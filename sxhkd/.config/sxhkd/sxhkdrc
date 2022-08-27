@@ -42,14 +42,22 @@ Pause
     dunstctl set-paused toggle
 
 # wm independent hotkeys
-
 # Screenshot script
-super  + F1
+super + F1
     "$HOME"/.config/sxhkd/scripts/screenshot_maim.sh 
 
 # Open notes index in browser
 super + F2
     $BROWSER $HOME/vimwiki_html/index.html
+
+# Open save webpage offline
+super + F3
+    "$HOME"/.config/sxhkd/scripts/save_webpage.sh 
+
+# Open power menu
+super + F4
+    "$HOME"/.config/polybar/scripts/powermenu.sh
+
 
 # Scratchpad Terminal script 
 super + u

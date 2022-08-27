@@ -11,7 +11,6 @@ pkill /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 pkill picom
 
 # Systray
-pkill pasystray
 pkill nm-applet
 pkill xfce4-power-manager
 #pkill blueman-applet
