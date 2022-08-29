@@ -3,11 +3,11 @@
 # A script to install all the packages (For Arch/Arch-based distros)
 if [ "$1" = "install" ] ; then
     sudo pacman -Syu 
-    sudo pacman -S $(<$(pwd)/extras/package)
-    cd /tmp
-    git clone https://aur.archlinux.org/paru.git
-    cd paru
-    makepkg -si
+    sudo pacman -S --needed - < "$(pwd)"/extras/package
+    #cd /tmp || (echo "/tmp not found" && exit)
+    #git clone https://aur.archlinux.org/paru.git
+    #cd paru || (echo "./paru not found" && exit)
+    #makepkg -si
 fi
 
 
@@ -18,10 +18,10 @@ fi
 
 # Sym-linking dot-files
 if [ "$1" = "link" ] ; then
-    stow -v $(ls -A -I "README.md" -I "extras" -I ".git*" -I "install_script.sh")
+    stow -v "$(ls -A -I "README.md" -I "extras" -I ".git*" -I "install_script.sh")"
 fi
 
-[ "$1" = "copy" ] && printf "Copying extra files.\n" && sudo cp -rvi $(pwd)/extras/etc/* /etc/ 
+[ "$1" = "copy" ] && printf "Copying extra files.\n" && sudo cp -rvi "$(pwd)"/extras/etc/* /etc/ 
 
 [ $# -lt 1 ] && printf "Basic options:\ninstall - Install the necessary applications
 service - Enables the required services.
