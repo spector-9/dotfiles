@@ -1,12 +1,13 @@
 HOME = os.getenv("HOME")
 vim.g.mapleader = " "
-vim.opt.iskeyword = {'+', '=', '-', '.', ':', '-'}
+--vim.opt.iskeyword = {'+', '=', '-', '.', ':', '-'}
 vim.g.gruvbox_italic = 1  --Enabling italics
 --set updatetime=50
 vim.cmd [[
     syntax on
     filetype plugin on
     colorscheme gruvbox-material
+    packadd termdebug
 ]]
 
 vim.g.background = dark

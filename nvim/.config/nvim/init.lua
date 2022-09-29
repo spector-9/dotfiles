@@ -1,8 +1,3 @@
-require('vim_var')
-require('plugy')
-require('keybinds')
-require('autocomp')
-
 local configs = require'nvim-treesitter.configs'
 configs.setup {
 ensure_installed = {"c", "cpp", "rust", "markdown", "latex", "commonlisp",
@@ -15,14 +10,20 @@ indent = {
   enable = true -- default is disabled anyways
 }
 }
+
+require('plugy')
+require("mason").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = {"marksman", "shellcheck", "clangd", "perlnavigator", "rust_analyzer" }
+})
+require('autocomp')
+
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-  local opts = {}
-  server:setup(opts)
-end)
+require('vim_var')
+require('keybinds')
+
 --source $HOME/.config/nvim/keys/vim_keybinds.vim
 --source $HOME/.config/nvim/keys/which-key.vim
 --source $HOME/.config/nvim/plug-config/start-screen.vim
