@@ -1,14 +1,16 @@
-compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
-# history for vim binds
 setopt  auto_cd  
+
 # Auto Pushd
 DIRSTACKSIZE=10
 #setopt autopushd
 #setopt pushdignoredups
+
 # CD Path
 cdpath=($HOME/Media)
+
 # Path Variable
 export PATH="/home/$USER/wx/wxWidgets-3.1.3/lib/gtk3_so/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+
 # Aliases
 alias yt='ytfzf --subt'
 alias update='sudo pacman -Syu'
@@ -40,6 +42,7 @@ alias 9='cdr 9'
 alias 9='cdr 10'
 alias tb='taskbook'
 alias o='xdg-open'
+
 downvid() {
     quality="$1"
     shift
@@ -47,8 +50,8 @@ downvid() {
         yt-dlp --embed-thumbnail --embed-subs --sub-lang en --write-auto-sub -f "bestvideo[height<=$quality]+bestaudio/best[height<=$quality]" "$i"
     done
 }
-# Set up the prompt
 
+# Set up the prompt
 autoload -Uz promptinit
 promptinit
 prompt adam1
@@ -58,11 +61,10 @@ setopt histignorealldups sharehistory
 
 # Use emacs(-e) or vi(-v) keybindings 
 bindkey -v
-
 bindkey "^R" history-beginning-search-backward
 bindkey "^F" history-beginning-search-forward
 #bindkey "^R" history-incremental-search-backward
-# Auto CD
+
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
 SAVEHIST=10000
@@ -142,6 +144,6 @@ echo '
 \   _-"                                                                `-_   /
  `""                                                                      ``" '
 
-fortune theo
+# fortune theo
 
-cat $HOME/list.txt
+# cat $HOME/agenda.md

@@ -2,7 +2,7 @@
 
 RADV_PERFTEST=aco
 EDITOR=nvim
-BROWSER=waterfox
+BROWSER=librewolf
 NNN_PLUG='v:imgview;p:preview-tabbed'
 NNN_FIFO=/tmp/nnn.fifo
 NNN_TRASH=1
