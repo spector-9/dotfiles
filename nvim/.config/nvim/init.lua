@@ -12,10 +12,6 @@ indent = {
 }
 
 require('plugy')
-require("mason").setup()
-require("mason-lspconfig").setup({
-    ensure_installed = {"marksman", "shellcheck", "clangd", "perlnavigator", "rust_analyzer" }
-})
 require('autocomp')
 
 vim.opt.foldmethod = "expr"
